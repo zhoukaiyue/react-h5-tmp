@@ -2,11 +2,11 @@
  * @Author: zhoukaiyue 1301524439@qq.com
  * @Date: 2022-07-28 10:00:57
  * @LastEditors: zhoukai
- * @LastEditTime: 2022-07-29 15:09:34
+ * @LastEditTime: 2022-07-31 20:08:11
  * @FilePath: \react-h5\craco.config.js
  * @Description: 默认配置重置文件
  */
-/* craco.config.js */
+
 
 const path = require("path");
 module.exports = {

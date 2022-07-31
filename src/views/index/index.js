@@ -1,17 +1,27 @@
 /*
- * @Descripttion: 
- * @version: 
+ * @Descripttion:
+ * @version:
  * @Author: zhoukai
  * @Date: 2022-07-29 14:31:25
  * @LastEditors: zhoukai
- * @LastEditTime: 2022-07-29 14:31:42
+ * @LastEditTime: 2022-07-31 20:03:31
  */
+
+import { Button } from "antd-mobile";
+import { useNavigate } from "react-router-dom";
+
 function Index() {
-    return (
-      <div className="index">
-        首页
-      </div>
-    );
-  }
-  
-  export default Index;
+  let navigate = useNavigate();
+  const goDevPage = () => {
+    navigate("/dev");
+  };
+  return (
+    <div className="index">
+      <Button color="primary" fill="solid" onClick={goDevPage}>
+        进入开发者中心
+      </Button>
+    </div>
+  );
+}
+
+export default Index;

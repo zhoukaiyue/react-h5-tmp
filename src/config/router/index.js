@@ -1,11 +1,18 @@
 /*
- * @Descripttion: 
- * @version: 
+ * @Descripttion:index router配置文件
+ * @version:
  * @Author: zhoukai
  * @Date: 2022-07-29 11:03:13
  * @LastEditors: zhoukai
- * @LastEditTime: 2022-07-29 14:28:58
+ * @LastEditTime: 2022-07-31 20:17:11
  */
-// 使用 ES6 的转译器，如 babel
-import React, { Suspense, lazy } from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import index from "@/views/index";
+const routes = [
+
+  {
+    path: "/index",
+    component: index,
+    exact: true,
+  },
+];
+export default routes;
