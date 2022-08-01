@@ -2,7 +2,7 @@
  * @Author: zhoukaiyue 1301524439@qq.com
  * @Date: 2022-07-28 10:00:57
  * @LastEditors: zhoukai
- * @LastEditTime: 2022-08-01 19:48:53
+ * @LastEditTime: 2022-08-01 20:15:08
  * @FilePath: \react-h5\craco.config.js
  * @Description: 默认配置重置文件
  */
@@ -20,7 +20,7 @@ module.exports = {
     //配置cdn外部资源不打包
     externals: {},
     configure: (webpackConfig, { env, paths }) => {
-      console.log("环境：\n", env, __dirname);
+
 
       //输出(output) 配置
       webpackConfig.output = {

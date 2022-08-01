@@ -8,6 +8,7 @@
     "@testing-library/react": "13.3.0",
     "@testing-library/user-event": "13.5.0",
     "antd-mobile": "5.20.0",
+    "dotenv-cli": "6.0.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-router-dom": "6.3.0",
@@ -23,8 +24,10 @@
     "sass-loader": "13.0.2"
   },
   "scripts": {
-    "start": "craco start",
-    "build": "craco  build",
+    "start": "dotenv -e .env.development craco start",
+    "build": "dotenv -e .env.production craco  build",
+    "build:test": "dotenv -e .env.test craco  build",
+    "build:prod": "dotenv -e .env.production craco  build",
     "test": "craco  test",
     "eject": "react-scripts eject"
   },
