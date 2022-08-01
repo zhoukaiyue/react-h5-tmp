@@ -2,7 +2,7 @@
  * @Author: zhoukaiyue 1301524439@qq.com
  * @Date: 2022-07-28 10:00:57
  * @LastEditors: zhoukai
- * @LastEditTime: 2022-08-01 18:16:21
+ * @LastEditTime: 2022-08-01 19:48:53
  * @FilePath: \react-h5\craco.config.js
  * @Description: 默认配置重置文件
  */
@@ -26,7 +26,6 @@ module.exports = {
       webpackConfig.output = {
         ...webpackConfig.output,
         publicPath: "/", // 设置静态资源公共路径
-        assetModuleFilename: "static/img/[name].[hash:7][ext]", //静态资源
       };
       //开发环境开启source-map
       webpackConfig.devtool =
@@ -39,6 +38,7 @@ module.exports = {
           extractComments: false, //不将注释提取到单独的文件中
         }),
       ];
+
       //分包
       if (env === "production") {
         webpackConfig.optimization.splitChunks = {
