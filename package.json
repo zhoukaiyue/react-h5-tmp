@@ -28,8 +28,13 @@
     "build": "dotenv -e .env.production craco  build",
     "build:test": "dotenv -e .env.test craco  build",
     "build:prod": "dotenv -e .env.production craco  build",
-    "test": "craco  test",
     "eject": "react-scripts eject"
+  },
+  "scripts-info": {
+    "start": "运行开发环境服务器",
+    "build": "构建生产程序包",
+    "build:prod": "构建生产程序包",
+    "build:test": "构建灰度程序包"
   },
   "eslintConfig": {
     "extends": [
