@@ -1,57 +1,65 @@
 {
-  "name": "react-h5-tmp",
-  "version": "0.1.0",
-  "private": true,
-  "dependencies": {
-    "@craco/craco": "6.4.5",
-    "@testing-library/jest-dom": "5.16.4",
-    "@testing-library/react": "13.3.0",
-    "@testing-library/user-event": "13.5.0",
-    "antd-mobile": "5.20.0",
-    "dotenv-cli": "6.0.0",
-    "react": "18.2.0",
-    "react-dom": "18.2.0",
-    "react-router-dom": "6.3.0",
-    "react-scripts": "5.0.1",
-    "web-vitals": "2.1.4"
-  },
-  "devDependencies": {
-    "autoprefixer": "10.4.7",
-    "postcss": "8.4.14",
-    "postcss-loader": "7.0.1",
-    "postcss-pxtorem": "6.0.0",
-    "sass": "1.54.0",
-    "sass-loader": "13.0.2"
-  },
-  "scripts": {
-    "start": "dotenv -e .env.development craco start",
-    "build": "dotenv -e .env.production craco  build",
-    "build:test": "dotenv -e .env.test craco  build",
-    "build:prod": "dotenv -e .env.production craco  build",
-    "eject": "react-scripts eject"
-  },
-  "scripts-info": {
-    "start": "运行开发环境服务器",
-    "build": "构建生产程序包",
-    "build:prod": "构建生产程序包",
-    "build:test": "构建灰度程序包"
-  },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
-  }
+    "name": "react-h5-tmp",
+    "version": "0.1.0",
+    "private": true,
+    "dependencies": {
+        "@craco/craco": "6.4.5",
+        "@testing-library/jest-dom": "5.16.4",
+        "@testing-library/react": "13.3.0",
+        "@testing-library/user-event": "13.5.0",
+        "antd-mobile": "5.20.0",
+        "dotenv-cli": "6.0.0",
+        "eslint-plugin-react-hooks": "^4.6.0",
+        "react": "18.2.0",
+        "react-dom": "18.2.0",
+        "react-router-dom": "6.3.0",
+        "react-scripts": "5.0.1",
+        "web-vitals": "2.1.4"
+    },
+    "devDependencies": {
+        "autoprefixer": "10.4.7",
+        "eslint": "^8.21.0",
+        "eslint-config-prettier": "^8.5.0",
+        "eslint-config-standard": "^17.0.0",
+        "eslint-plugin-import": "^2.26.0",
+        "eslint-plugin-n": "^15.2.4",
+        "eslint-plugin-prettier": "^4.2.1",
+        "eslint-plugin-promise": "^6.0.0",
+        "eslint-plugin-react": "^7.30.1",
+        "postcss": "8.4.14",
+        "postcss-loader": "7.0.1",
+        "postcss-pxtorem": "6.0.0",
+        "prettier": "2.7.1",
+        "sass": "1.54.0",
+        "sass-loader": "13.0.2"
+    },
+    "scripts": {
+        "start": "dotenv -e .env.development craco start",
+        "build": "dotenv -e .env.production craco  build",
+        "build:test": "dotenv -e .env.test craco  build",
+        "build:prod": "dotenv -e .env.production craco  build",
+        "eject": "react-scripts eject",
+        "lint:prettier": "npx prettier --write src/",
+        "lint:fix": "npx eslint --ext .js src --fix"
+    },
+    "scripts-info": {
+        "start": "运行开发环境服务器",
+        "build": "构建生产程序包",
+        "build:prod": "构建生产程序包",
+        "build:test": "构建灰度程序包",
+        "lint:prettier": "格式化src/下所有文件",
+        "lint:fix": "对src/.js文件进行lint，并尝试修复一些格式类的错误，语法类需要手动修复"
+    },
+    "browserslist": {
+        "production": [
+            ">0.2%",
+            "not dead",
+            "not op_mini all"
+        ],
+        "development": [
+            "last 1 chrome version",
+            "last 1 firefox version",
+            "last 1 safari version"
+        ]
+    }
 }

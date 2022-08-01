@@ -8,10 +8,10 @@
  */
 import dev from "@/views/dev"
 const routes = [
-  {
-    path: "/dev",
-    component:dev,
-    exact: true,
-  }
-];
-export default routes;
+    {
+        path: "/dev",
+        component: dev,
+        exact: true,
+    },
+]
+export default routes
