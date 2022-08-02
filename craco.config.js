@@ -2,7 +2,7 @@
  * @Author: zhoukaiyue 1301524439@qq.com
  * @Date: 2022-07-28 10:00:57
  * @LastEditors: zhoukai
- * @LastEditTime: 2022-08-01 23:07:45
+ * @LastEditTime: 2022-08-02 14:47:36
  * @FilePath: \react-h5\craco.config.js
  * @Description: 默认配置重置文件
  */
@@ -22,14 +22,17 @@ module.exports = {
         configure: (webpackConfig, { env, paths }) => {
             // 开发环境开启source-map
             webpackConfig.devtool = env === "development" ? "cheap-module-source-map" : false
-            // webpack5 新属性
-            // 不将注释提取到单独的文件中
-            webpackConfig.optimization.minimize = true
-            webpackConfig.optimization.minimizer = [
-                new TerserPlugin({
-                    extractComments: false, // 不将注释提取到单独的文件中
-                }),
-            ]
+
+            if (env !== "development") {
+                // webpack5 新属性
+                // 不将注释提取到单独的文件中
+                webpackConfig.optimization.minimize = true
+                webpackConfig.optimization.minimizer = [
+                    new TerserPlugin({
+                        extractComments: false, // 不将注释提取到单独的文件中
+                    }),
+                ]
+            }
 
             // 分包
             if (env === "production") {
