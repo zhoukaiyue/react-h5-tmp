@@ -4,7 +4,7 @@
  * @Author: zhoukai
  * @Date: 2022-08-01 21:34:48
  * @LastEditors: zhoukai
- * @LastEditTime: 2022-08-01 21:49:03
+ * @LastEditTime: 2022-08-02 09:49:52
  */
 module.exports = {
     env: {
@@ -21,6 +21,7 @@ module.exports = {
     },
     plugins: ["react", "prettier"],
     rules: {
+        "prettier/prettier": ["error", { endOfLine: "auto" }],
         // suppress errors for missing 'import React' in files
         "react/react-in-jsx-scope": "off",
         // allow jsx syntax in js files (for next.js project)

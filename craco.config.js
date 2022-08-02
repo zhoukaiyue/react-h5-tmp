@@ -2,7 +2,7 @@
  * @Author: zhoukaiyue 1301524439@qq.com
  * @Date: 2022-07-28 10:00:57
  * @LastEditors: zhoukai
- * @LastEditTime: 2022-08-01 20:15:08
+ * @LastEditTime: 2022-08-01 23:07:45
  * @FilePath: \react-h5\craco.config.js
  * @Description: 默认配置重置文件
  */
@@ -20,11 +20,6 @@ module.exports = {
         // 配置cdn外部资源不打包
         externals: {},
         configure: (webpackConfig, { env, paths }) => {
-            // 输出(output) 配置
-            webpackConfig.output = {
-                ...webpackConfig.output,
-                publicPath: "/", // 设置静态资源公共路径
-            }
             // 开发环境开启source-map
             webpackConfig.devtool = env === "development" ? "cheap-module-source-map" : false
             // webpack5 新属性
