@@ -4,7 +4,7 @@
  * @Author: zhoukai
  * @Date: 2022-08-02 16:29:25
  * @LastEditors: zhoukai
- * @LastEditTime: 2022-08-02 17:40:51
+ * @LastEditTime: 2022-08-02 17:59:53
  */
 import axios from "axios"
 import QS from "qs"
@@ -36,7 +36,7 @@ axios.interceptors.request.use(
 // 添加响应拦截器
 axios.interceptors.response.use(
     function (response) {
-        laoding.show()
+        laoding.hide()
         // 对响应数据做点什么
         return response
     },

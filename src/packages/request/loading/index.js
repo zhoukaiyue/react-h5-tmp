@@ -4,7 +4,7 @@
  * @Author: zhoukai
  * @Date: 2022-08-02 17:36:23
  * @LastEditors: zhoukai
- * @LastEditTime: 2022-08-02 17:39:23
+ * @LastEditTime: 2022-08-02 17:59:17
  */
 import { Toast } from "antd-mobile"
 
@@ -14,7 +14,11 @@ let COUNT = 0
 const laoding = {
     show() {
         if (COUNT === 0) {
-            Toast.laoding()
+            Toast.show({
+                duration: 0,
+                icon: "loading",
+                content: "加载中…",
+            })
         }
         COUNT++
     },
