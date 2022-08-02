@@ -4,7 +4,7 @@
  * @Author: zhoukai
  * @Date: 2022-07-28 09:54:02
  * @LastEditors: zhoukai
- * @LastEditTime: 2022-08-01 17:59:30
+ * @LastEditTime: 2022-08-02 12:13:00
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -16,10 +16,27 @@
   <meta name="theme-color" content="#000000" />
   <meta name="description" content="中国银联" />
   <title>React H5</title>
+  <style>
+    #root {
+      background-color: #f4f5f6;
+      height: 100%;
+      overflow-y: auto;
+    }
+
+    .top-safe-area {
+      padding-top: constant(safe-area-inset-top);
+      padding-top: env(safe-area-inset-top);
+    }
+
+    .bottom-safe-area {
+      padding-bottom: constant(safe-area-inset-bottom);
+      padding-bottom: env(safe-area-inset-bottom);
+    }
+  </style>
 </head>
 
 <body>
-  <div id="root"></div>
+  <div id="root" class="top-safe-area bottom-safe-area"></div>
 </body>
 
 </html>
