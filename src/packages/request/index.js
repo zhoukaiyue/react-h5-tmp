@@ -1,13 +1,21 @@
+/*
+ * @Descripttion:
+ * @version:
+ * @Author: zhoukai
+ * @Date: 2022-08-02 16:29:25
+ * @LastEditors: zhoukai
+ * @LastEditTime: 2022-08-02 17:31:58
+ */
 import axios from "axios"
 import QS from "qs"
 
 // axios 基础配置
-axios.defaults = {
-    ...axios.defaults,
-    baseURL: "", //  将自动加在 `url` 前面，除非 `url` 是一个绝对 URL。
-    withCredentials: true, // 表示跨域请求时是否需要使用凭证
-    timeout: 10000, // 请求超时时间设定
-}
+//  将自动加在 `url` 前面，除非 `url` 是一个绝对 URL。
+axios.defaults.baseURL = process.env.REACT_APP_AXIOS_BASEURL
+// 表示跨域请求时是否需要使用凭证
+axios.defaults.withCredentials = true
+// 请求超时时间设定
+axios.defaults.timeout = 10000
 
 // 拦截器
 // 添加请求拦截器
