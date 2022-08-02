@@ -4,11 +4,12 @@
  * @Author: zhoukai
  * @Date: 2022-08-02 16:29:25
  * @LastEditors: zhoukai
- * @LastEditTime: 2022-08-02 17:31:58
+ * @LastEditTime: 2022-08-02 17:40:51
  */
 import axios from "axios"
 import QS from "qs"
-
+// 请求库laoding
+import laoding from "./loading"
 // axios 基础配置
 //  将自动加在 `url` 前面，除非 `url` 是一个绝对 URL。
 axios.defaults.baseURL = process.env.REACT_APP_AXIOS_BASEURL
@@ -21,10 +22,12 @@ axios.defaults.timeout = 10000
 // 添加请求拦截器
 axios.interceptors.request.use(
     function (config) {
+        laoding.show()
         // 在发送请求之前做些什么
         return config
     },
     function (error) {
+        laoding.hide()
         // 对请求错误做些什么
         return Promise.reject(error)
     }
@@ -33,10 +36,12 @@ axios.interceptors.request.use(
 // 添加响应拦截器
 axios.interceptors.response.use(
     function (response) {
+        laoding.show()
         // 对响应数据做点什么
         return response
     },
     function (error) {
+        laoding.hide()
         // 对响应错误做点什么
         return Promise.reject(error)
     }
