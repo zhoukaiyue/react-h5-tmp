@@ -4,12 +4,13 @@
  * @Author: zhoukai
  * @Date: 2022-07-28 09:54:02
  * @LastEditors: zhoukai
- * @LastEditTime: 2022-08-02 22:29:35
+ * @LastEditTime: 2022-08-02 22:33:02
 -->
 
 # 简介
 
-本工程是通过 create-react-app 创建的使用了 antd-mobile 作为 UI 组件库，使用 craco 对 create-react-app 的默认配置进行自定义设置。
+本工程是通过 create-react-app 创建并使用 antd-mobile 作为 UI 组件库。
+另使用 craco（一个对 create-react-app 进行自定义配置的社区解决方案） 对 create-react-app 的默认配置进行自定义设置。
 
 # 环境要求
 
