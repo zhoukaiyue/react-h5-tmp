@@ -2,7 +2,7 @@
  * @Author: zhoukaiyue 1301524439@qq.com
  * @Date: 2022-07-28 09:54:02
  * @LastEditors: zhoukai
- * @LastEditTime: 2022-07-31 20:23:24
+ * @LastEditTime: 2022-08-02 10:23:45
  * @FilePath: \react-h5\src\App.js
  * @Description: router-view
  */
@@ -11,7 +11,7 @@ import "@/views/app/App.scss"
 
 import React from "react"
 
-import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom"
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
 import routers from "@/packages/router"
 
 const App = () => {
@@ -28,8 +28,6 @@ const App = () => {
                         />
                     )
                 })}
-                {/* 重定向 */}
-                <Route path="/" element={<Navigate replace to="/index" />} />
             </Routes>
         </Router>
     )
