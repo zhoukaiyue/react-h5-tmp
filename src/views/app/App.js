@@ -2,12 +2,10 @@
  * @Author: zhoukaiyue 1301524439@qq.com
  * @Date: 2022-07-28 09:54:02
  * @LastEditors: zhoukai
- * @LastEditTime: 2022-08-02 10:23:45
+ * @LastEditTime: 2022-08-02 14:56:36
  * @FilePath: \react-h5\src\App.js
- * @Description: router-view
+ * @Description: 顶级 router-view
  */
-
-import "@/views/app/App.scss"
 
 import React from "react"
 
