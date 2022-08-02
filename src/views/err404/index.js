@@ -7,7 +7,7 @@
  * @LastEditTime: 2022-08-02 15:13:26
  */
 import "./index.scss"
-import FrameView from "../../layout/frame-view"
+import FrameView from "@/layout/frame-view"
 
 function _cont() {
     return (
