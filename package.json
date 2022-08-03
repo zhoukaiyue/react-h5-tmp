@@ -53,7 +53,7 @@
         "build:test": "构建灰度程序包",
         "lint:prettier": "格式化src/下所有文件",
         "lint:fix": "对src/.js文件进行lint，并尝试修复一些格式类的错误，语法类需要手动修复",
-        "analyze": "该命令旨在分析捆绑包大小。你需要在对应的环境配置文件下，如 .env.test 中设置 REACT_APP_GENERATE_SOURCEMAP 为 true"
+        "analyze": "该命令旨在分析捆绑包大小。你需要在对应的环境配置文件下，如 .env.test 中设置 REACT_APP_GENERATE_SOURCEMAP 为 true，然后运行test环境构建 npm run build:test，然后运行分析脚本 npm run analyze"
     },
     "browserslist": {
         "production": [
