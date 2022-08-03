@@ -13,4 +13,21 @@
             display: none;
         }
     }
+    .layout-tabbar {
+        box-sizing: content-box;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        background-color: #fff;
+        width: 100vw;
+        height: 100px;
+        font-size: 26px;
+        padding-bottom: constant(safe-area-inset-bottom);
+        padding-bottom: env(safe-area-inset-bottom);
+    }
+    &.h-tabbar {
+        .frame-view-content {
+            height: calc(100% - 100px);
+        }
+    }
 }

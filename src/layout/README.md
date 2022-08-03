@@ -4,17 +4,18 @@
  * @Author: zhoukai
  * @Date: 2022-08-02 14:22:16
  * @LastEditors: zhoukai
- * @LastEditTime: 2022-08-02 16:06:48
+ * @LastEditTime: 2022-08-03 17:52:57
 -->
 
 # layOut 布局组件
 
 ## props
 
-|   属性    |      说明       |   类型    | 默认值 |
-| :-------: | :-------------: | :-------: | :----: |
-| className | 自定义 class 类 |  string   |   -    |
-|   cont    |      内容       | ReactNode |   -    |
+|    属性    |      说明       |   类型    | 默认值 |
+| :--------: | :-------------: | :-------: | :----: |
+| className  | 自定义 class 类 |  string   |   -    |
+| showTabbar | 是否显示 Tabbar |  boolean  | false  |
+|    cont    |      内容       | ReactNode |   -    |
 
 ## 使用方法
 

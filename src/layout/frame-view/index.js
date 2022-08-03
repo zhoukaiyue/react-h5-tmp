@@ -5,21 +5,30 @@
  * @Author: zhoukai
  * @Date: 2022-08-02 10:30:43
  * @LastEditors: zhoukai
- * @LastEditTime: 2022-08-02 14:03:29
+ * @LastEditTime: 2022-08-03 17:48:54
  */
 import "./index.scss"
-// import Tabbar from "../tabbar"
+import Tabbar from "../tabbar"
 function FrameView(props) {
+    // 自定义class
     let className = "frame-view"
     if (props && props.className) {
         className += ` ${props.className}`
     }
+    // 是否显示tabbar,默认不展示
+    let showTabbar = false
+    if (props && props.showTabbar) {
+        showTabbar = props.showTabbar
+        className += ` h-tabbar`
+    }
+    const TabbarTmp = showTabbar ? <Tabbar></Tabbar> : null
+
     return (
         <div className={className}>
             {/* 内容区域 */}
             <div className="frame-view-content">{props.cont}</div>
             {/* 底部Tabbar */}
-            {/* <Tabbar></Tabbar> */}
+            {TabbarTmp}
         </div>
     )
 }
