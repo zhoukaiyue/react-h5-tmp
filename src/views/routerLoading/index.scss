@@ -1,0 +1,14 @@
+.routerLoading {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    .cont {
+        width: 200px;
+        height: 200px;
+        background-image: url("~@/assets/img/base/loading@2x.gif");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
+    }
+}

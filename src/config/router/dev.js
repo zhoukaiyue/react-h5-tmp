@@ -4,10 +4,12 @@
  * @Author: zhoukai
  * @Date: 2022-07-29 11:03:13
  * @LastEditors: zhoukai
- * @LastEditTime: 2022-08-02 15:33:43
+ * @LastEditTime: 2022-08-03 09:43:38
  */
-import dev from "@/views/dev"
-import DevLayOut from "@/views/dev/components/layOut"
+
+import { lazy } from "react"
+const dev = lazy(() => import("@/views/dev"))
+const DevLayOut = lazy(() => import("@/views/dev/components/layOut"))
 const routes = [
     {
         path: "/dev",

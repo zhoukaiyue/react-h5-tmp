@@ -4,9 +4,11 @@
  * @Author: zhoukai
  * @Date: 2022-07-29 11:03:13
  * @LastEditors: zhoukai
- * @LastEditTime: 2022-08-02 10:22:33
+ * @LastEditTime: 2022-08-03 09:39:59
  */
-import index from "@/views/index"
+
+import { lazy } from "react"
+const index = lazy(() => import("@/views/index"))
 const routes = [
     {
         path: "/",
