@@ -15,6 +15,7 @@
         "react-dom": "18.2.0",
         "react-router-dom": "6.3.0",
         "react-scripts": "5.0.1",
+        "source-map-explorer": "2.5.2",
         "web-vitals": "2.1.4"
     },
     "devDependencies": {
@@ -42,7 +43,8 @@
         "build:prod": "dotenv -e .env.production craco  build",
         "eject": "react-scripts eject",
         "lint:prettier": "npx prettier --write src/",
-        "lint:fix": "npx eslint --ext .js src --fix"
+        "lint:fix": "npx eslint --ext .js src --fix",
+        "analyze": "source-map-explorer 'build/static/js/*.js'"
     },
     "scripts-info": {
         "start": "运行开发环境服务器",
@@ -50,7 +52,8 @@
         "build:prod": "构建生产程序包",
         "build:test": "构建灰度程序包",
         "lint:prettier": "格式化src/下所有文件",
-        "lint:fix": "对src/.js文件进行lint，并尝试修复一些格式类的错误，语法类需要手动修复"
+        "lint:fix": "对src/.js文件进行lint，并尝试修复一些格式类的错误，语法类需要手动修复",
+        "analyze": "该命令旨在分析捆绑包大小。你需要在对应的环境配置文件下，如 .env.test 中设置 REACT_APP_GENERATE_SOURCEMAP 为 true"
     },
     "browserslist": {
         "production": [

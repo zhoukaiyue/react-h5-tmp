@@ -2,13 +2,17 @@
  * @Author: zhoukaiyue 1301524439@qq.com
  * @Date: 2022-07-28 10:00:57
  * @LastEditors: zhoukai
- * @LastEditTime: 2022-08-02 21:39:54
+ * @LastEditTime: 2022-08-03 16:25:52
  * @FilePath: \react-h5\craco.config.js
  * @Description: 默认配置重置文件
  */
 
 const path = require("path")
 const TerserPlugin = require("terser-webpack-plugin")
+
+// Source maps are resource heavy and can cause out of memory issue for large source files.
+const shouldUseSourceMap = process.env.REACT_APP_GENERATE_SOURCEMAP === "true"
+
 module.exports = {
     // webpack 配置
     webpack: {
@@ -20,10 +24,20 @@ module.exports = {
         // 配置cdn外部资源不打包
         externals: {},
         configure: (webpackConfig, { env, paths }) => {
+            // eslint-disable-next-line no-unused-vars
+            const isEnvDevelopment = env === "development" // 开发模式
+            const isEnvProduction = env === "production" // 生产模式
             // 开发环境开启source-map
-            webpackConfig.devtool = env === "development" ? "cheap-module-source-map" : false
+            webpackConfig.devtool = isEnvProduction
+                ? shouldUseSourceMap
+                    ? "source-map"
+                    : false
+                : env === "development"
+                ? "cheap-module-source-map"
+                : false
 
-            if (env !== "development") {
+            // 分包
+            if (isEnvProduction) {
                 // webpack5 新属性
                 // 不将注释提取到单独的文件中
                 webpackConfig.optimization.minimize = true
@@ -32,10 +46,7 @@ module.exports = {
                         extractComments: false, // 不将注释提取到单独的文件中
                     }),
                 ]
-            }
 
-            // 分包
-            if (env === "production") {
                 webpackConfig.optimization.splitChunks = {
                     ...webpackConfig.optimization.splitChunks,
                     // 指明要分割的插件类型, async:异步插件(动态导入),inital:同步插件,all：全部类型
