@@ -4,7 +4,7 @@
  * @Author: zhoukai
  * @Date: 2022-07-28 09:54:02
  * @LastEditors: zhoukai
- * @LastEditTime: 2022-08-02 22:33:02
+ * @LastEditTime: 2022-08-03 15:59:27
 -->
 
 # 简介
@@ -14,8 +14,7 @@
 
 # 环境要求
 
--   node 14.17.6
--   create-react-app 5.0
+-   node 14+
 
 # 项目目录说明
 
