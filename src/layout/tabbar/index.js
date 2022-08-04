@@ -4,10 +4,10 @@
  * @Author: zhoukai
  * @Date: 2022-08-02 10:30:43
  * @LastEditors: zhoukai
- * @LastEditTime: 2022-08-04 14:57:17
+ * @LastEditTime: 2022-08-04 15:06:18
  */
 import { Badge, TabBar } from 'antd-mobile';
-import { AppOutline, UserOutline } from 'antd-mobile-icons';
+import { AppOutline, QuestionCircleOutline } from 'antd-mobile-icons';
 import { useNavigate, useLocation } from 'react-router-dom';
 function Tabbar() {
     const navigate = useNavigate();
@@ -22,7 +22,7 @@ function Tabbar() {
         {
             key: '/dev',
             title: '开发者中心',
-            icon: <UserOutline />,
+            icon: <QuestionCircleOutline />,
             badge: Badge.dot
         }
     ];
