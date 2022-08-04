@@ -1,0 +1,23 @@
+/*
+ * @Descripttion: 由于webpack别名配置好以后，如果想要在vscold中可以正确提示路径，就需要配置jsconfig.json文件：
+ * @version:
+ * @Author: zhoukai
+ * @Date: 2022-08-04 22:23:38
+ * @LastEditors: zhoukai
+ * @LastEditTime: 2022-08-04 22:38:22
+ */
+{
+    "compilerOptions": {
+        "target": "es5",
+        "module": "esnext",
+        "baseUrl": "./",
+        "jsx": "preserve", //在这里添加"jsx": "preserve",
+        "moduleResolution": "node",
+        "paths": {
+            "@/*": ["src/*"]
+        },
+        "lib": ["esnext", "dom", "dom.iterable", "scripthost"]
+    },
+    //提高 IDE 性能
+    "exclude": ["node_modules", "dist", "build"]
+}
