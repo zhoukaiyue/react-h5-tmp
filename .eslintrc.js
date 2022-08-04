@@ -4,9 +4,10 @@
  * @Author: zhoukai
  * @Date: 2022-08-01 21:34:48
  * @LastEditors: zhoukai
- * @LastEditTime: 2022-08-04 14:40:51
+ * @LastEditTime: 2022-08-04 22:28:21
  */
 module.exports = {
+    root: true,
     env: {
         browser: true,
         es2021: true,
