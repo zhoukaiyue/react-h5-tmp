@@ -4,7 +4,7 @@
  * @Author: zhoukai
  * @Date: 2022-07-29 14:31:25
  * @LastEditors: zhoukai
- * @LastEditTime: 2022-08-03 17:47:26
+ * @LastEditTime: 2022-08-04 13:49:41
  */
 import './index.scss';
 import { Button } from 'antd-mobile';
@@ -34,7 +34,8 @@ function Index() {
                 <Button color='primary' fill='solid' onClick={goDevPage}>
                     进入开发者中心
                 </Button>
-            }></FrameView>
+            }
+        ></FrameView>
     );
 }
 

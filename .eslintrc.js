@@ -4,7 +4,7 @@
  * @Author: zhoukai
  * @Date: 2022-08-01 21:34:48
  * @LastEditors: zhoukai
- * @LastEditTime: 2022-08-04 10:06:17
+ * @LastEditTime: 2022-08-04 11:07:34
  */
 module.exports = {
     env: {
@@ -21,12 +21,8 @@ module.exports = {
     },
     plugins: ['react', 'prettier'],
     rules: {
-        // suppress errors for missing 'import React' in files
         'react/react-in-jsx-scope': 'off',
-        // allow jsx syntax in js files (for next.js project)
-        'react/jsx-filename-extension': [1, { extensions: ['.js', '.jsx'] }], // should add ".ts" if typescript project
         'no-unused-vars': ['warn', { vars: 'all', args: 'after-used', ignoreRestSiblings: false }],
-        'prettier/prettier': ['error', { singleQuote: true }],
-        'no-eval': ['error', { allowIndirect: true }] // default is false
+        'prettier/prettier': ['error', { singleQuote: true }]
     }
 };
