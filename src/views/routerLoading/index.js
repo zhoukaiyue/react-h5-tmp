@@ -6,11 +6,11 @@
  * @LastEditors: zhoukai
  * @LastEditTime: 2022-08-03 10:37:15
  */
-import "./index.scss"
+import './index.scss';
 const routerLoading = (
-    <div className="routerLoading">
-        <div className="cont"></div>
+    <div className='routerLoading'>
+        <div className='cont'></div>
     </div>
-)
+);
 
-export default routerLoading
+export default routerLoading;

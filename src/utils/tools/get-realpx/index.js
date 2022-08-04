@@ -14,6 +14,6 @@
  * @returns
  */
 export default function getRealPx(px) {
-    const screenWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth
-    return (screenWidth / 750) * px
+    const screenWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+    return (screenWidth / 750) * px;
 }

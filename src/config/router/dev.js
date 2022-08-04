@@ -7,19 +7,19 @@
  * @LastEditTime: 2022-08-03 09:43:38
  */
 
-import { lazy } from "react"
-const dev = lazy(() => import("@/views/dev"))
-const DevLayOut = lazy(() => import("@/views/dev/components/layOut"))
+import { lazy } from 'react';
+const dev = lazy(() => import('@/views/dev'));
+const DevLayOut = lazy(() => import('@/views/dev/components/layOut'));
 const routes = [
     {
-        path: "/dev",
+        path: '/dev',
         component: dev,
-        exact: true,
+        exact: true
     },
     {
-        path: "/dev/layOut",
+        path: '/dev/layOut',
         component: DevLayOut,
-        exact: true,
-    },
-]
-export default routes
+        exact: true
+    }
+];
+export default routes;

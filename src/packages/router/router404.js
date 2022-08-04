@@ -7,12 +7,12 @@
  * @LastEditTime: 2022-07-31 20:14:13
  */
 
-import err404 from "@/views/err404"
+import err404 from '@/views/err404';
 const routes = [
     {
-        path: "*",
+        path: '*',
         component: err404,
-        exact: true,
-    },
-]
-export default routes
+        exact: true
+    }
+];
+export default routes;

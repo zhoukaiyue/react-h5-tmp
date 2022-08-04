@@ -21,10 +21,10 @@
 
 ```javascript
 // 引入组件
-import FrameView from "@/layout/frame-view"
+import FrameView from '@/layout/frame-view';
 
 function Page() {
-    return <FrameView className="Page" cont={<div>{/* code */}</div>}></FrameView>
+    return <FrameView className='Page' cont={<div>{/* code */}</div>}></FrameView>;
 }
-export default Page
+export default Page;
 ```

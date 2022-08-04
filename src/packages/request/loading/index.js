@@ -6,27 +6,27 @@
  * @LastEditors: zhoukai
  * @LastEditTime: 2022-08-02 17:59:17
  */
-import { Toast } from "antd-mobile"
+import { Toast } from 'antd-mobile';
 
 // 计数
-let COUNT = 0
+let COUNT = 0;
 
 const laoding = {
     show() {
         if (COUNT === 0) {
             Toast.show({
                 duration: 0,
-                icon: "loading",
-                content: "加载中…",
-            })
+                icon: 'loading',
+                content: '加载中…'
+            });
         }
-        COUNT++
+        COUNT++;
     },
     hide() {
-        if (COUNT <= 0) return
-        COUNT--
-        if (COUNT === 0) Toast.clear()
-    },
-}
+        if (COUNT <= 0) return;
+        COUNT--;
+        if (COUNT === 0) Toast.clear();
+    }
+};
 
-export default laoding
+export default laoding;

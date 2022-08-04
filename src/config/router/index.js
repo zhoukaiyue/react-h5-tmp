@@ -7,18 +7,18 @@
  * @LastEditTime: 2022-08-03 09:39:59
  */
 
-import { lazy } from "react"
-const index = lazy(() => import("@/views/index"))
+import { lazy } from 'react';
+const index = lazy(() => import('@/views/index'));
 const routes = [
     {
-        path: "/",
+        path: '/',
         component: index,
-        exact: true,
+        exact: true
     },
     {
-        path: "/index",
+        path: '/index',
         component: index,
-        exact: true,
-    },
-]
-export default routes
+        exact: true
+    }
+];
+export default routes;

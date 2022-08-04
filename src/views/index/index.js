@@ -6,37 +6,36 @@
  * @LastEditors: zhoukai
  * @LastEditTime: 2022-08-03 17:47:26
  */
-import "./index.scss"
-import { Button } from "antd-mobile"
-import { useNavigate } from "react-router-dom"
-import FrameView from "@/layout/frame-view"
-import { $post } from "@/packages/request"
+import './index.scss';
+import { Button } from 'antd-mobile';
+import { useNavigate } from 'react-router-dom';
+import FrameView from '@/layout/frame-view';
+import { $post } from '@/packages/request';
 function Index() {
-    $post("/mock/5/signup-web/queryActInfo")
+    $post('/mock/5/signup-web/queryActInfo')
         .then((res) => {
-            console.log(res)
+            console.log(res);
         })
         .catch((err) => {
-            console.log(err)
+            console.log(err);
         })
         .finally(() => {
             //
-        })
-    const navigate = useNavigate()
+        });
+    const navigate = useNavigate();
     const goDevPage = () => {
-        navigate("/dev")
-    }
+        navigate('/dev');
+    };
     return (
         <FrameView
-            className={"index"}
+            className={'index'}
             showTabbar={true}
             cont={
-                <Button color="primary" fill="solid" onClick={goDevPage}>
+                <Button color='primary' fill='solid' onClick={goDevPage}>
                     进入开发者中心
                 </Button>
-            }
-        ></FrameView>
-    )
+            }></FrameView>
+    );
 }
 
-export default Index
+export default Index;

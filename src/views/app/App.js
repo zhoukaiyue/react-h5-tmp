@@ -7,14 +7,14 @@
  * @Description: 顶级 router-view
  */
 
-import React, { Suspense } from "react"
+import React, { Suspense } from 'react';
 
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
-import routers from "@/packages/router"
-import routerLoading from "../routerLoading"
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import routers from '@/packages/router';
+import routerLoading from '../routerLoading';
 
 // router基路径
-const ROUTER_BASE = process.env.REACT_APP_ROUTER_BASE
+const ROUTER_BASE = process.env.REACT_APP_ROUTER_BASE;
 
 const App = () => {
     return (
@@ -29,12 +29,12 @@ const App = () => {
                                 path={item.path}
                                 element={<item.component />} // 不是老版本的：component 或 render
                             />
-                        )
+                        );
                     })}
                 </Routes>
             </Suspense>
         </Router>
-    )
-}
+    );
+};
 
-export default App
+export default App;

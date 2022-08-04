@@ -7,31 +7,31 @@
  * @LastEditTime: 2022-08-03 16:38:52
  */
 
-import FrameView from "@/layout/frame-view"
-import { Link } from "react-router-dom"
-import getRealPx from "@/utils/tools/get-realpx"
+import FrameView from '@/layout/frame-view';
+import { Link } from 'react-router-dom';
+import getRealPx from '@/utils/tools/get-realpx';
 
 const findRouterList = [
     {
-        path: "/dev/layOut",
-        label: "layOut布局组件的使用",
-    },
-]
+        path: '/dev/layOut',
+        label: 'layOut布局组件的使用'
+    }
+];
 
 const CONT_TMP = (
     <div style={{ fontSize: `${getRealPx(36)}px` }}>
         {findRouterList.map((item, index) => {
             return (
-                <Link style={{ display: "block", textAlign: "center", marginTop: "20px" }} key={index} to={item.path}>
+                <Link style={{ display: 'block', textAlign: 'center', marginTop: '20px' }} key={index} to={item.path}>
                     {item.label}
                 </Link>
-            )
+            );
         })}
     </div>
-)
+);
 
 function Dev() {
-    return <FrameView className="dev" cont={CONT_TMP}></FrameView>
+    return <FrameView className='dev' cont={CONT_TMP}></FrameView>;
 }
 
-export default Dev
+export default Dev;
