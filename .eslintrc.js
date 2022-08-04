@@ -4,7 +4,7 @@
  * @Author: zhoukai
  * @Date: 2022-08-01 21:34:48
  * @LastEditors: zhoukai
- * @LastEditTime: 2022-08-04 11:07:34
+ * @LastEditTime: 2022-08-04 14:40:51
  */
 module.exports = {
     env: {
@@ -14,10 +14,10 @@ module.exports = {
     },
     extends: ['plugin:react/recommended', 'standard', 'plugin:prettier/recommended'],
     parserOptions: {
-        ecmaFeatures: {
-            jsx: true
-        },
-        ecmaVersion: 'latest'
+        // ecmaFeatures: {
+        //     jsx: true
+        // },
+        // ecmaVersion: 'latest'
     },
     plugins: ['react', 'prettier'],
     rules: {

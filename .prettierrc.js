@@ -4,7 +4,7 @@
  * @Author: zhoukai
  * @Date: 2022-08-01 21:28:57
  * @LastEditors: zhoukai
- * @LastEditTime: 2022-08-04 13:55:17
+ * @LastEditTime: 2022-08-04 14:40:57
  */
 module.exports = {
     semi: true,
@@ -13,5 +13,4 @@ module.exports = {
     singleQuote: true,
     jsxSingleQuote: true,
     trailingComma: 'none'
-    // jsxBracketSameLine: true
 };
