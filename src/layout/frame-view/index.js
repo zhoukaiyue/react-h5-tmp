@@ -5,7 +5,7 @@
  * @Author: zhoukai
  * @Date: 2022-08-02 10:30:43
  * @LastEditors: zhoukai
- * @LastEditTime: 2022-08-03 17:48:54
+ * @LastEditTime: 2022-08-04 14:56:09
  */
 import './index.scss';
 import Tabbar from '../tabbar';

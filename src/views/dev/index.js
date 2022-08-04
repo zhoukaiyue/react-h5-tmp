@@ -4,7 +4,7 @@
  * @Author: zhoukai
  * @Date: 2022-07-29 14:31:25
  * @LastEditors: zhoukai
- * @LastEditTime: 2022-08-03 16:38:52
+ * @LastEditTime: 2022-08-04 14:56:47
  */
 
 import FrameView from '@/layout/frame-view';
@@ -31,7 +31,7 @@ const CONT_TMP = (
 );
 
 function Dev() {
-    return <FrameView className='dev' cont={CONT_TMP}></FrameView>;
+    return <FrameView showTabbar={true} className='dev' cont={CONT_TMP}></FrameView>;
 }
 
 export default Dev;
