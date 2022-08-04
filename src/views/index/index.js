@@ -4,22 +4,22 @@
  * @Author: zhoukai
  * @Date: 2022-07-29 14:31:25
  * @LastEditors: zhoukai
- * @LastEditTime: 2022-08-04 15:02:58
+ * @LastEditTime: 2022-08-04 15:28:28
  */
 import './index.scss';
 import FrameView from '@/layout/frame-view';
-import { $post } from '@/packages/request';
+import { getqQeryActInfo } from '@/config/apis/index';
 function Index() {
-    const getqQeryActInfo = async () => {
+    const getqQeryActInfoEvt = async () => {
         try {
-            const res = await $post('/mock/5/signup-web/queryActInfo');
+            const res = await getqQeryActInfo({});
             console.log(res);
         } catch (error) {
             console.log(`获取活动信息时函数内部发生异常：\n` + error);
         }
     };
     // 获取活动信息
-    getqQeryActInfo();
+    getqQeryActInfoEvt();
 
     const INDEX_TMP = <div>首页</div>;
     return <FrameView className={'index'} showTabbar={true} cont={INDEX_TMP}></FrameView>;
