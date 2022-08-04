@@ -2,14 +2,14 @@
  * @Author: zhoukaiyue 1301524439@qq.com
  * @Date: 2022-07-28 10:00:57
  * @LastEditors: zhoukai
- * @LastEditTime: 2022-08-04 20:23:55
+ * @LastEditTime: 2022-08-04 22:02:44
  * @FilePath: \react-h5\craco.config.js
  * @Description: 默认配置重置文件
  */
 
 const path = require('path');
 const TerserPlugin = require('terser-webpack-plugin');
-
+const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 // Source maps are resource heavy and can cause out of memory issue for large source files.
 const shouldUseSourceMap = process.env.REACT_APP_GENERATE_SOURCEMAP === 'true';
 
@@ -43,8 +43,23 @@ module.exports = {
                 // 不将注释提取到单独的文件中
                 webpackConfig.optimization.minimize = true;
                 webpackConfig.optimization.minimizer = [
+                    new CssMinimizerPlugin(),
                     new TerserPlugin({
-                        extractComments: false // 不将注释提取到单独的文件中
+                        parallel: 6,
+                        extractComments: false, // 不将注释提取到单独的文件中
+                        terserOptions: {
+                            ecma: undefined,
+                            warnings: false,
+                            parse: {},
+                            format: {
+                                comments: false
+                            },
+                            compress: {
+                                drop_console: isEnvProduction, // 生产环境下移除控制台所有的内容
+                                drop_debugger: false, // 移除断点
+                                pure_funcs: isEnvProduction ? ['console.log'] : '' // 生产环境下移除console
+                            }
+                        }
                     })
                 ];
 
