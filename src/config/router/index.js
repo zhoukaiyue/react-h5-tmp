@@ -4,11 +4,10 @@
  * @Author: zhoukai
  * @Date: 2022-07-29 11:03:13
  * @LastEditors: zhoukai
- * @LastEditTime: 2022-08-04 14:54:20
+ * @LastEditTime: 2022-08-04 15:42:39
  */
 
 import { lazy } from 'react';
-const index = lazy(() => import('@/views/index'));
 const routes = [
     {
         path: '/',
@@ -17,7 +16,7 @@ const routes = [
     },
     {
         path: '/index',
-        component: index,
+        component: lazy(() => import('@/views/index')),
         exact: true
     }
 ];

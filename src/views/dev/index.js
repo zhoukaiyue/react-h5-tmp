@@ -4,7 +4,7 @@
  * @Author: zhoukai
  * @Date: 2022-07-29 14:31:25
  * @LastEditors: zhoukai
- * @LastEditTime: 2022-08-04 15:18:45
+ * @LastEditTime: 2022-08-04 15:45:53
  */
 
 import FrameView from '@/layout/frame-view';
@@ -18,7 +18,11 @@ function Dev() {
     const findRouterList = [
         {
             path: '/dev/layOut',
-            label: 'layOut布局组件的使用'
+            label: 'layOut 布局组件的使用'
+        },
+        {
+            path: '/dev/list',
+            label: 'list 下拉刷新滚动加载列表'
         }
     ];
     const CONT_TMP = (

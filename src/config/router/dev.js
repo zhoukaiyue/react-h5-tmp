@@ -4,21 +4,25 @@
  * @Author: zhoukai
  * @Date: 2022-07-29 11:03:13
  * @LastEditors: zhoukai
- * @LastEditTime: 2022-08-03 09:43:38
+ * @LastEditTime: 2022-08-04 15:45:09
  */
 
 import { lazy } from 'react';
-const dev = lazy(() => import('@/views/dev'));
-const DevLayOut = lazy(() => import('@/views/dev/components/layOut'));
+
 const routes = [
     {
         path: '/dev',
-        component: dev,
+        component: lazy(() => import('@/views/dev')),
         exact: true
     },
     {
         path: '/dev/layOut',
-        component: DevLayOut,
+        component: lazy(() => import('@/views/dev/components/layOut')),
+        exact: true
+    },
+    {
+        path: '/dev/list',
+        component: lazy(() => import('@/views/dev/components/list')),
         exact: true
     }
 ];
