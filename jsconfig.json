@@ -2,11 +2,19 @@
     "compilerOptions": {
         "baseUrl": ".",
         "paths": {
-            "@/*": ["src/*"]
+            "@/*": [
+                "src/*"
+            ]
         },
         "target": "ES6",
         "allowSyntheticDefaultImports": true
     },
-    "include": ["src/**/*"],
-    "exclude": ["node_modules", "dist", "build"]
+    "include": [
+        "src/**/*"
+    ],
+    "exclude": [
+        "node_modules",
+        "dist",
+        "build"
+    ]
 }
