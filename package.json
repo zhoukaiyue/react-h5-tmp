@@ -43,7 +43,7 @@
         "build:prod": "dotenv -e .env.production craco  build",
         "eject": "react-scripts eject",
         "lint:prettier": "npx prettier --write src/  --config ./.prettierrc.js",
-        "lint:fix": "npx eslint --ext .js src --fix",
+        "lint:fix": "npx eslint --ext .js,.jsx ./ --fix",
         "analyze": "source-map-explorer 'build/static/js/*.js'"
     },
     "scripts-info": {

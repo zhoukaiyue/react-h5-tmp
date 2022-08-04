@@ -9,13 +9,13 @@
 module.exports = {
     presets: [
         [
-            "@babel/preset-env",
+            '@babel/preset-env',
             {
                 targets: {
-                    chrome: "49",
-                    ios: "10",
-                },
-            },
-        ],
-    ],
-}
+                    chrome: '49',
+                    ios: '10'
+                }
+            }
+        ]
+    ]
+};
