@@ -5,7 +5,7 @@
  * @Author: zhoukai
  * @Date: 2022-08-04 15:34:42
  * @LastEditors: zhoukai
- * @LastEditTime: 2022-08-05 00:26:25
+ * @LastEditTime: 2022-08-05 09:16:57
  */
 
 import React from 'react';
@@ -85,7 +85,7 @@ class BaseList extends React.Component {
                     <PullToRefresh onRefresh={this.onRefresh}>
                         <List style={{ minHeight: '100vh' }}>
                             {this.state.list.map((item, index) => (
-                                <List.Item key={index}>1111</List.Item>
+                                <List.Item key={index}>{item.propertyTitle}</List.Item>
                             ))}
                         </List>
                         <InfiniteScroll loadMore={this.loadMore} hasMore={this.state.hasMore} />

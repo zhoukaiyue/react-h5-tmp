@@ -4,7 +4,7 @@
  * @Author: zhoukai
  * @Date: 2022-07-28 09:54:02
  * @LastEditors: zhoukai
- * @LastEditTime: 2022-08-04 23:07:48
+ * @LastEditTime: 2022-08-05 10:00:39
 -->
 
 # 简介
@@ -15,6 +15,11 @@ react-h5-tmp 是基于 create-react-app 创建并使用 antd-mobile 作为 UI �
 ## 环境要求
 
 -   node 14+
+##  编辑器以及对应扩展
+-   Visual Studio 69+
+-   Vetur v0.35.0
+-   Eslint v2.2.6
+-   Prettier - Code formatter v9.5.0
 
 ## 开发规范
 
