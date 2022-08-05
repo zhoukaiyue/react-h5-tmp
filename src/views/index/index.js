@@ -4,24 +4,12 @@
  * @Author: zhoukai
  * @Date: 2022-07-29 14:31:25
  * @LastEditors: zhoukai
- * @LastEditTime: 2022-08-04 23:13:11
+ * @LastEditTime: 2022-08-05 11:35:26
  */
 import './index.scss';
 import FrameView from '@/layout/frame-view';
-import { getqQeryActInfo } from '@/config/apis/index';
 import { Tag } from 'antd-mobile';
 function Index() {
-    const getqQeryActInfoEvt = async () => {
-        try {
-            const res = await getqQeryActInfo({});
-            console.log(res);
-        } catch (error) {
-            console.log(`获取活动信息时函数内部发生异常：\n` + error);
-        }
-    };
-    // 获取活动信息
-    getqQeryActInfoEvt();
-
     const INDEX_TMP = (
         <div>
             <h1>react-h5-tmp简介：</h1>
