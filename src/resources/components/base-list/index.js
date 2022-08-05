@@ -5,9 +5,9 @@
  * @Author: zhoukai
  * @Date: 2022-08-04 15:34:42
  * @LastEditors: zhoukai
- * @LastEditTime: 2022-08-05 11:09:02
+ * @LastEditTime: 2022-08-05 11:13:13
  */
-
+import './index.scss';
 import React from 'react';
 import { PullToRefresh, InfiniteScroll, List } from 'antd-mobile';
 import { sleep } from 'antd-mobile/es/utils/sleep'; // 十秒的沉睡时间
