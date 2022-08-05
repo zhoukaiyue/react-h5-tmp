@@ -5,7 +5,7 @@
  * @Author: zhoukai
  * @Date: 2022-08-04 15:34:42
  * @LastEditors: zhoukai
- * @LastEditTime: 2022-08-05 11:13:13
+ * @LastEditTime: 2022-08-05 13:44:02
  */
 import './index.scss';
 import React from 'react';
@@ -44,7 +44,6 @@ class BaseList extends React.Component {
      * @param {String} type 可选值："init" | "refresh" | ""
      *  */
     async onRefresh(type) {
-        console.log(type, '==');
         if (type === 'init' || type === 'refresh') {
             page = 1;
             pageList = [];
