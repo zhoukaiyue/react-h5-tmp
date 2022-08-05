@@ -4,7 +4,7 @@
  * @Author: zhoukai
  * @Date: 2022-08-04 15:43:17
  * @LastEditors: zhoukai
- * @LastEditTime: 2022-08-04 17:06:35
+ * @LastEditTime: 2022-08-05 10:55:25
  */
 import BaseList from '@/resources/components/base-list';
 import { getList } from '@/config/apis/list';
@@ -17,12 +17,12 @@ function DevBaseList() {
     const req = {
         fn: getList,
         params: {
-            size: 10 // 每页请求次数
+            id: '11'
         }
     };
 
     // eslint-disable-next-line no-undef
-    return <BaseList req={req}></BaseList>;
+    return <BaseList req={req} size={9}></BaseList>;
 }
 
 export default DevBaseList;
