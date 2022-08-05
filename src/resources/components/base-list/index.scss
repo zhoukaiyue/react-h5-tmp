@@ -1,5 +1,19 @@
-.BaseList{
-    .frame-view-content{
+.BaseList {
+    .frame-view-content {
         background-color: #fff;
+        // 去掉列表容器顶部、底部的边框样式
+        .adm-list {
+            --border-top: 'none';
+            --border-bottom: 'none';
+        }
+        .baseList-adm-empty {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            .adm-empty-description {
+                font-size: 43px;
+            }
+        }
     }
 }

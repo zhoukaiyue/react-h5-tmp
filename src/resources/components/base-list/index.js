@@ -5,11 +5,11 @@
  * @Author: zhoukai
  * @Date: 2022-08-04 15:34:42
  * @LastEditors: zhoukai
- * @LastEditTime: 2022-08-05 13:44:02
+ * @LastEditTime: 2022-08-05 14:07:06
  */
 import './index.scss';
 import React from 'react';
-import { PullToRefresh, InfiniteScroll, List } from 'antd-mobile';
+import { PullToRefresh, InfiniteScroll, List, Empty } from 'antd-mobile';
 import { sleep } from 'antd-mobile/es/utils/sleep'; // 十秒的沉睡时间
 import FrameView from '@/layout/frame-view';
 // 当前页码
@@ -93,9 +93,17 @@ class BaseList extends React.Component {
                         }}
                     >
                         <List style={{ minHeight: '100vh' }}>
-                            {this.state.list.map((item, index) => (
-                                <List.Item key={index}>{item.propertyTitle}</List.Item>
-                            ))}
+                            {this.state.list.length ? (
+                                this.state.list.map((item, index) => (
+                                    <List.Item key={index}>{item.propertyTitle}</List.Item>
+                                ))
+                            ) : (
+                                <Empty
+                                    className='baseList-adm-empty'
+                                    imageStyle={{ width: 180 }}
+                                    description='暂无数据'
+                                />
+                            )}
                         </List>
                         <InfiniteScroll
                             loadMore={async () => {
