@@ -4,7 +4,7 @@
  * @Author: zhoukai
  * @Date: 2022-07-29 14:31:25
  * @LastEditors: zhoukai
- * @LastEditTime: 2022-08-08 09:53:52
+ * @LastEditTime: 2022-08-08 09:57:53
  */
 import './index.scss';
 import FrameView from '@/layout/frame-view';
@@ -26,6 +26,10 @@ function Dev() {
         {
             path: '/dev/lodashjs',
             label: 'lodashjs 库的使用规范'
+        },
+        {
+            path: '/dev/tabbar',
+            label: 'tabbar 底部标签栏'
         }
     ];
     const CONT_TMP = (

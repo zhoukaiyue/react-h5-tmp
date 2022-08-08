@@ -4,7 +4,7 @@
  * @Author: zhoukai
  * @Date: 2022-07-29 11:03:13
  * @LastEditors: zhoukai
- * @LastEditTime: 2022-08-05 14:42:01
+ * @LastEditTime: 2022-08-08 09:57:41
  */
 
 import { lazy } from 'react';
@@ -28,6 +28,11 @@ const routes = [
     {
         path: '/dev/lodashjs',
         component: lazy(() => import('@/views/dev/components/lodashjs')),
+        exact: true
+    },
+    {
+        path: '/dev/tabbar',
+        component: lazy(() => import('@/views/dev/components/tabbar')),
         exact: true
     }
 ];
