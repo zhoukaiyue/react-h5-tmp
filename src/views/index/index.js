@@ -4,21 +4,30 @@
  * @Author: zhoukai
  * @Date: 2022-07-29 14:31:25
  * @LastEditors: zhoukai
- * @LastEditTime: 2022-08-05 11:35:26
+ * @LastEditTime: 2022-08-08 09:21:03
  */
 import './index.scss';
 import FrameView from '@/layout/frame-view';
-import { Tag } from 'antd-mobile';
+import { Button } from 'antd-mobile';
+import { useNavigate } from 'react-router-dom';
 function Index() {
-    const INDEX_TMP = (
-        <div>
-            <h1>react-h5-tmp简介：</h1>
-            <br />
-            <Tag>react-h5-tmp</Tag>&nbsp; 是基于&nbsp; create-react-app&nbsp; 创建并使用&nbsp; antd-mobile&nbsp; 作为 UI
-            组件库的一个移动端脚手架，开箱即用。
-        </div>
+    const navigate = useNavigate();
+    return (
+        <FrameView
+            className={'index'}
+            cont={
+                <Button
+                    shape='default'
+                    color='primary'
+                    onClick={() => {
+                        navigate('/dev');
+                    }}
+                >
+                    开发者中心
+                </Button>
+            }
+        ></FrameView>
     );
-    return <FrameView className={'index'} showTabbar={true} cont={INDEX_TMP}></FrameView>;
 }
 
 export default Index;

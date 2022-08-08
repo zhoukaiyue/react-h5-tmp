@@ -4,14 +4,13 @@
  * @Author: zhoukai
  * @Date: 2022-07-29 14:31:25
  * @LastEditors: zhoukai
- * @LastEditTime: 2022-08-05 14:42:57
+ * @LastEditTime: 2022-08-08 09:53:52
  */
-
+import './index.scss';
 import FrameView from '@/layout/frame-view';
-import { List } from 'antd-mobile';
-
+import { RightOutline } from 'antd-mobile-icons';
+import { Tag } from 'antd-mobile';
 import { useNavigate } from 'react-router-dom';
-import getRealPx from '@/utils/tools/get-realpx';
 
 function Dev() {
     const navigate = useNavigate();
@@ -30,24 +29,31 @@ function Dev() {
         }
     ];
     const CONT_TMP = (
-        <div style={{ fontSize: `${getRealPx(36)}px` }}>
-            <List header='开发者中心'>
+        <div>
+            <div>
+                <Tag>react-h5-tmp</Tag>&nbsp; 是基于&nbsp; create-react-app&nbsp; 创建并使用&nbsp; antd-mobile&nbsp;
+                作为 UI 组件库的一个移动端脚手架，开箱即用。
+            </div>
+            <div style={{ padding: '12px 0' }}>下面是一些基础组件的使用demo，可以点进去试一试</div>
+            <div className='nav'>
                 {findRouterList.map((item, index) => {
                     return (
-                        <List.Item
+                        <div
+                            className='nav__block'
                             key={index}
                             onClick={() => {
                                 navigate(item.path);
                             }}
                         >
-                            {item.label}
-                        </List.Item>
+                            <span> {item.label}</span>
+                            <RightOutline style={{ fontSize: 16 }} color={'#B6C3D2'} />
+                        </div>
                     );
                 })}
-            </List>
+            </div>
         </div>
     );
-    return <FrameView showTabbar={true} className='dev' cont={CONT_TMP}></FrameView>;
+    return <FrameView className='dev' cont={CONT_TMP}></FrameView>;
 }
 
 export default Dev;
