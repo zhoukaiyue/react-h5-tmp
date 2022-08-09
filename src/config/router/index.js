@@ -4,7 +4,7 @@
  * @Author: zhoukai
  * @Date: 2022-07-29 11:03:13
  * @LastEditors: zhoukai
- * @LastEditTime: 2022-08-04 15:42:39
+ * @LastEditTime: 2022-08-09 21:50:09
  */
 
 import { lazy } from 'react';
@@ -17,7 +17,10 @@ const routes = [
     {
         path: '/index',
         component: lazy(() => import('@/views/index')),
-        exact: true
+        exact: true,
+        meta: {
+            title: '首页'
+        }
     }
 ];
 export default routes;

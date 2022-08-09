@@ -2,7 +2,7 @@
  * @Author: zhoukaiyue 1301524439@qq.com
  * @Date: 2022-07-28 10:00:57
  * @LastEditors: zhoukai
- * @LastEditTime: 2022-08-09 10:36:26
+ * @LastEditTime: 2022-08-09 22:45:51
  * @FilePath: \react-h5\craco.config.js
  * @Description: 默认配置重置文件
  */
@@ -10,6 +10,10 @@
 const path = require('path');
 const TerserPlugin = require('terser-webpack-plugin');
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
+// 开发模式
+const isEnvDevelopment = process.env.REACT_APP_MODE === 'development';
+// 生产模式
+const isEnvProduction = process.env.REACT_APP_MODE === 'production';
 // Source maps are resource heavy and can cause out of memory issue for large source files.
 const shouldUseSourceMap = process.env.REACT_APP_GENERATE_SOURCEMAP === 'true';
 
@@ -25,20 +29,15 @@ module.exports = {
         externals: {},
         // eslint-disable-next-line no-unused-vars
         configure: (webpackConfig, { env, paths }) => {
-            // eslint-disable-next-line no-unused-vars
-            const isEnvDevelopment = env === 'development'; // 开发模式
-            const isEnvProduction = env === 'production'; // 生产模式
-            // 开发环境开启source-map
-            webpackConfig.devtool = isEnvProduction
-                ? shouldUseSourceMap
-                    ? 'source-map'
-                    : false
-                : env === 'development'
+            // 开发环境开启 devtool，方便开发人员快速定位错误
+            webpackConfig.devtool = shouldUseSourceMap
+                ? 'source-map'
+                : isEnvDevelopment
                 ? 'cheap-module-source-map'
                 : false;
 
             // 分包
-            if (isEnvProduction) {
+            if (!isEnvDevelopment) {
                 // webpack5 新属性
                 // 不将注释提取到单独的文件中
                 webpackConfig.optimization.minimize = true;
