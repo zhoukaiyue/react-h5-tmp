@@ -2,7 +2,7 @@
  * @Author: zhoukaiyue 1301524439@qq.com
  * @Date: 2022-07-28 10:00:57
  * @LastEditors: zhoukai
- * @LastEditTime: 2022-08-04 22:02:44
+ * @LastEditTime: 2022-08-09 10:36:26
  * @FilePath: \react-h5\craco.config.js
  * @Description: 默认配置重置文件
  */
@@ -77,8 +77,8 @@ module.exports = {
                     minRemainingSize: 0,
                     cacheGroups: {
                         // reatc相关,都打包到vendors/react下面
-                        'vendors/react': {
-                            name: 'vendors/react',
+                        'vendors/react-bucket': {
+                            name: 'vendors/react-bucket',
                             test: /[\\/]node_modules[\\/](react|react-dom|react-router-dom|react-scripts)[\\/]/,
                             priority: 10
                         },
