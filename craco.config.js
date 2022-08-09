@@ -2,7 +2,7 @@
  * @Author: zhoukaiyue 1301524439@qq.com
  * @Date: 2022-07-28 10:00:57
  * @LastEditors: zhoukai
- * @LastEditTime: 2022-08-09 22:53:15
+ * @LastEditTime: 2022-08-09 23:10:55
  * @FilePath: \react-h5\craco.config.js
  * @Description: 默认配置重置文件
  */
@@ -23,6 +23,8 @@ const shouldUseSourceMap = process.env.REACT_APP_GENERATE_SOURCEMAP === 'true';
 module.exports = {
     // webpack 配置
     webpack: {
+        // 将 lint 错误输出为编译警告,并且输出到命令行，注意不会使得编译失败。
+        lintOnSave: 'warning',
         // 配置别名
         alias: {
             // 约定：使用 @ 表示 src 文件所在路径
@@ -82,19 +84,19 @@ module.exports = {
                         'vendors/react-bucket': {
                             name: 'vendors/react-bucket',
                             test: /[\\/]node_modules[\\/](react|react-dom|react-router-dom|react-scripts)[\\/]/,
-                            priority: 10
+                            priority: 6
                         },
                         // 组件库,都打包到vendors/ui下面
                         'vendors/ui': {
                             name: 'vendors/ui',
                             test: /[\\/]node_modules[\\/](vant|element-ui|antd-mobile|antd)[\\/]/,
-                            priority: 9
+                            priority: 5
                         },
                         // 默认缓存组 当一个文件被引入超过四次的时候 也分包成一个文件
                         default: {
                             name: 'common',
                             chunks: 'initial',
-                            minChunks: 4,
+                            minChunks: 2,
                             reuseExistingChunk: true
                         }
                     }
