@@ -2,7 +2,7 @@
  * @Author: zhoukaiyue 1301524439@qq.com
  * @Date: 2022-07-28 10:00:57
  * @LastEditors: zhoukai
- * @LastEditTime: 2022-08-09 22:45:51
+ * @LastEditTime: 2022-08-09 22:53:15
  * @FilePath: \react-h5\craco.config.js
  * @Description: 默认配置重置文件
  */
@@ -12,6 +12,9 @@ const TerserPlugin = require('terser-webpack-plugin');
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 // 开发模式
 const isEnvDevelopment = process.env.REACT_APP_MODE === 'development';
+// 测试环境
+// eslint-disable-next-line no-unused-vars
+const isEnvTest = process.env.REACT_APP_MODE === 'test';
 // 生产模式
 const isEnvProduction = process.env.REACT_APP_MODE === 'production';
 // Source maps are resource heavy and can cause out of memory issue for large source files.
