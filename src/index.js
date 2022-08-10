@@ -4,7 +4,7 @@
  * @Author: zhoukai
  * @Date: 2022-07-28 09:54:02
  * @LastEditors: zhoukai
- * @LastEditTime: 2022-08-10 00:18:14
+ * @LastEditTime: 2022-08-10 15:20:38
  */
 /*
  * @Description: 描述
@@ -15,7 +15,7 @@ import '@/assets/css/index.scss';
 import App from '@/views/app/App';
 import reportWebVitals from './reportWebVitals';
 import { Provider } from 'react-redux';
-import { store } from '@/packages/redux';
+import { store } from '@/packages/store';
 const container = document.getElementById('root');
 const root = createRoot(container);
 root.render(
