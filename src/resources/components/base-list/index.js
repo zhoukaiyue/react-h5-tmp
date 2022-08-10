@@ -5,24 +5,20 @@
  * @Author: zhoukai
  * @Date: 2022-08-04 15:34:42
  * @LastEditors: zhoukai
- * @LastEditTime: 2022-08-05 14:07:06
+ * @LastEditTime: 2022-08-11 00:33:11
  */
 import './index.scss';
 import React from 'react';
 import { PullToRefresh, InfiniteScroll, List, Empty } from 'antd-mobile';
-import { sleep } from 'antd-mobile/es/utils/sleep'; // 十秒的沉睡时间
-import FrameView from '@/layout/frame-view';
-// 当前页码
-let page = 1;
-// 列表数据
-let pageList = [];
+// import { sleep } from 'antd-mobile/es/utils/sleep'; // 十秒的沉睡时间
 
 class BaseList extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
+            page: 1, // 当前页码
             list: [], // 列表数据
-            hasMore: false // 是否还有更多内容,结束 loadmore函数
+            hasMore: true // 是否还有更多内容,结束 loadmore函数
         };
         // 纠正方法的this的指向(使用es6箭头函数，将不需要将事件在constructor中改变this指向)
         this.onRefresh = this.onRefresh.bind(this);
@@ -41,35 +37,40 @@ class BaseList extends React.Component {
 
     /**
      * 触发刷新时的处理函数
-     * @param {String} type 可选值："init" | "refresh" | ""
+     * @param {String} type 可选值："init"（初始化） | "refresh"（下拉刷新操作） | "load" 滚动加载
      *  */
     async onRefresh(type) {
-        if (type === 'init' || type === 'refresh') {
-            page = 1;
-            pageList = [];
+        // 下拉刷新方式
+        if (type === 'refresh') {
             // 下拉刷新时，结束loadMore函数
             this.setState({ hasMore: false });
         }
-        // 沉睡1秒
-        await sleep(1000);
+        // 初始化或者下拉刷新时清空列表
+        if (type === 'init' || type === 'refresh') {
+            // 情况列表
+            this.setState({ list: [] });
+        }
+
+        // // 沉睡1秒
+        // await sleep(1000);
         try {
             // 加载接口
             // eslint-disable-next-line react/prop-types
             const res = await this.props.req.fn({
-                page,
-                size: this.props.size
+                page: this.state.page,
+                size: this.props.size || 10
             });
             // 下一页
-            page = page + 1;
+            this.setState({ page: this.state.page + 1 });
+
             // 当前页返回的数据
             const _list = [...res.data.pageList];
-            // 追加到pageList集合中
-            pageList = [...pageList, ..._list];
-            // 设置data
-            this.setState({ list: [...pageList] });
-            // 列表加载结束
-            // eslint-disable-next-line react/prop-types
-            if (_list.length < this.props.size) {
+
+            // 设置list
+            this.setState({ list: [..._list, ...this.state.list] });
+
+            // 分页是否加载完毕
+            if (_list.length < (this.props.size || 10)) {
                 // 结束loadMore函数
                 this.setState({ hasMore: false });
             } else {
@@ -78,42 +79,33 @@ class BaseList extends React.Component {
             }
         } catch (error) {
             console.log(`下拉刷新组件在加载数据时方法内部出错：\n` + error);
+            this.setState({ hasMore: false });
         }
     }
 
     render() {
         return (
-            <FrameView
-                className={'BaseList'}
-                showTabbar={false}
-                cont={
-                    <PullToRefresh
-                        onRefresh={async () => {
-                            await this.onRefresh('refresh');
-                        }}
-                    >
-                        <List style={{ minHeight: '100vh' }}>
-                            {this.state.list.length ? (
-                                this.state.list.map((item, index) => (
-                                    <List.Item key={index}>{item.propertyTitle}</List.Item>
-                                ))
-                            ) : (
-                                <Empty
-                                    className='baseList-adm-empty'
-                                    imageStyle={{ width: 180 }}
-                                    description='暂无数据'
-                                />
-                            )}
-                        </List>
-                        <InfiniteScroll
-                            loadMore={async () => {
-                                await this.onRefresh('loadMore');
-                            }}
-                            hasMore={this.state.hasMore}
-                        />
-                    </PullToRefresh>
-                }
-            ></FrameView>
+            <PullToRefresh
+                onRefresh={async () => {
+                    await this.onRefresh('refresh');
+                }}
+            >
+                <List style={{ '--border-top': 'none', '--border-bottom': 'none' }}>
+                    {this.state.list.length ? (
+                        this.state.list.map((item, index) => (
+                            <List.Item key={index}>{this.props.ItemContent(item, index)}</List.Item>
+                        ))
+                    ) : (
+                        <Empty className='baseList-adm-empty' imageStyle={{ width: 180 }} description='暂无数据' />
+                    )}
+                </List>
+                <InfiniteScroll
+                    loadMore={async () => {
+                        await this.onRefresh('loadMore');
+                    }}
+                    hasMore={this.state.hasMore}
+                />
+            </PullToRefresh>
         );
     }
 }

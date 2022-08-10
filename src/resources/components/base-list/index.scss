@@ -1,11 +1,5 @@
-.BaseList {
+.base-list {
     .frame-view-content {
-        background-color: #fff;
-        // 去掉列表容器顶部、底部的边框样式
-        .adm-list {
-            --border-top: 'none';
-            --border-bottom: 'none';
-        }
         .baseList-adm-empty {
             position: fixed;
             top: 50%;

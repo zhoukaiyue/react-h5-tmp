@@ -4,8 +4,10 @@
  * @Author: zhoukai
  * @Date: 2022-08-04 15:43:17
  * @LastEditors: zhoukai
- * @LastEditTime: 2022-08-05 10:55:25
+ * @LastEditTime: 2022-08-11 00:25:58
  */
+import './index.scss';
+import FrameView from '@/layout/frame-view';
 import BaseList from '@/resources/components/base-list';
 import { getList } from '@/config/apis/list';
 function DevBaseList() {
@@ -22,7 +24,23 @@ function DevBaseList() {
     };
 
     // eslint-disable-next-line no-undef
-    return <BaseList req={req} size={9}></BaseList>;
+    return (
+        <FrameView
+            className={'BaseList'}
+            showTabbar={false}
+            cont={
+                <BaseList
+                    req={req}
+                    size={9}
+                    ItemContent={(item, index) => {
+                        // console.log(item);
+                        // console.log(index);
+                        return <div key={'_k' + index}>{item.areaName}</div>;
+                    }}
+                ></BaseList>
+            }
+        ></FrameView>
+    );
 }
 
 export default DevBaseList;
