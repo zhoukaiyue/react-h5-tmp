@@ -4,7 +4,7 @@
  * @Author: zhoukai
  * @Date: 2022-08-10 11:29:26
  * @LastEditors: zhoukai
- * @LastEditTime: 2022-08-10 11:52:45
+ * @LastEditTime: 2022-08-10 13:46:07
  */
 import React from 'react';
 import getRealPx from '@/utils/tools/get-realpx';
@@ -20,7 +20,7 @@ function DevEventBusFind() {
         <div style={{ color: '#333', fontSize: `${getRealPx(32)}px` }}>
             我是孙组件
             <br />
-            <span>这是我接收到祖父的传呼：{_msg}</span>
+            <span>这是我接收到祖父的传值：{_msg}</span>
         </div>
     );
 }

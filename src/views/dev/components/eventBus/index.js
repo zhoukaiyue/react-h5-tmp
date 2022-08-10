@@ -4,7 +4,7 @@
  * @Author: zhoukai
  * @Date: 2022-08-10 11:24:36
  * @LastEditors: zhoukai
- * @LastEditTime: 2022-08-10 11:50:59
+ * @LastEditTime: 2022-08-10 13:45:53
  */
 import FrameView from '@/layout/frame-view';
 import getRealPx from '@/utils/tools/get-realpx';
@@ -25,7 +25,7 @@ function DevEventBus() {
                             eventBus.emit('change', '你好！');
                         }}
                     >
-                        传值给子组件的子组件
+                        传值给孙组件
                     </button>
                     <Children></Children>
                 </div>
