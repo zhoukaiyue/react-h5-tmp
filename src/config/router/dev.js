@@ -4,7 +4,7 @@
  * @Author: zhoukai
  * @Date: 2022-07-29 11:03:13
  * @LastEditors: zhoukai
- * @LastEditTime: 2022-08-10 10:36:13
+ * @LastEditTime: 2022-08-10 11:27:15
  */
 
 import { lazy } from 'react';
@@ -56,6 +56,14 @@ const routes = [
         exact: true,
         meta: {
             title: 'redux状态管理的使用'
+        }
+    },
+    {
+        path: '/dev/eventBus',
+        component: lazy(() => import('@/views/dev/components/eventBus')),
+        exact: true,
+        meta: {
+            title: 'EventBus事件总线的使用'
         }
     }
 ];

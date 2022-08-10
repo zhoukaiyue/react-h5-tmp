@@ -4,7 +4,7 @@
  * @Author: zhoukai
  * @Date: 2022-07-29 14:31:25
  * @LastEditors: zhoukai
- * @LastEditTime: 2022-08-10 10:41:13
+ * @LastEditTime: 2022-08-10 11:27:33
  */
 import './index.scss';
 import FrameView from '@/layout/frame-view';
@@ -33,6 +33,10 @@ function Dev() {
         {
             path: '/dev/redux',
             label: 'redux状态管理的使用'
+        },
+        {
+            path: '/dev/eventBus',
+            label: 'EventBus事件总线的使用'
         }
     ];
     const CONT_TMP = (
