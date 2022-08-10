@@ -4,7 +4,7 @@
  * @Author: zhoukai
  * @Date: 2022-07-29 11:03:13
  * @LastEditors: zhoukai
- * @LastEditTime: 2022-08-09 21:41:09
+ * @LastEditTime: 2022-08-10 10:36:13
  */
 
 import { lazy } from 'react';
@@ -48,6 +48,14 @@ const routes = [
         exact: true,
         meta: {
             title: 'tabbar组件'
+        }
+    },
+    {
+        path: '/dev/redux',
+        component: lazy(() => import('@/views/dev/components/redux')),
+        exact: true,
+        meta: {
+            title: 'redux状态管理的使用'
         }
     }
 ];

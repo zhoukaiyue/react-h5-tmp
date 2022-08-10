@@ -4,21 +4,25 @@
  * @Author: zhoukai
  * @Date: 2022-07-28 09:54:02
  * @LastEditors: zhoukai
- * @LastEditTime: 2022-07-29 15:57:20
+ * @LastEditTime: 2022-08-10 00:18:14
  */
 /*
  * @Description: 描述
  */
 import React from 'react';
-import ReactDOM from 'react-dom/client';
+import { createRoot } from 'react-dom/client';
 import '@/assets/css/index.scss';
 import App from '@/views/app/App';
 import reportWebVitals from './reportWebVitals';
-
-const root = ReactDOM.createRoot(document.getElementById('root'));
+import { Provider } from 'react-redux';
+import { store } from '@/packages/redux';
+const container = document.getElementById('root');
+const root = createRoot(container);
 root.render(
     // <React.StrictMode>
-    <App />
+    <Provider store={store}>
+        <App />
+    </Provider>
     // </React.StrictMode>
 );
 

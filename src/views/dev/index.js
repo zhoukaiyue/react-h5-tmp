@@ -4,15 +4,21 @@
  * @Author: zhoukai
  * @Date: 2022-07-29 14:31:25
  * @LastEditors: zhoukai
- * @LastEditTime: 2022-08-08 09:57:53
+ * @LastEditTime: 2022-08-10 10:36:30
  */
 import './index.scss';
 import FrameView from '@/layout/frame-view';
 import { RightOutline } from 'antd-mobile-icons';
 import { Tag } from 'antd-mobile';
 import { useNavigate } from 'react-router-dom';
-
+import { useSelector, useDispatch } from 'react-redux';
+import { decrement, increment } from '@/config/redux/index.js';
 function Dev() {
+    const count = useSelector((state) => state.counter.value);
+    const dispatch = useDispatch();
+
+    console.log('count', count);
+
     const navigate = useNavigate();
     const findRouterList = [
         {
@@ -30,10 +36,21 @@ function Dev() {
         {
             path: '/dev/tabbar',
             label: 'tabbar 底部标签栏'
+        },
+        {
+            path: '/dev/redux',
+            label: 'redux状态管理的使用'
         }
     ];
     const CONT_TMP = (
         <div>
+            <button aria-label='Increment value' onClick={() => dispatch(increment())}>
+                Increment
+            </button>
+            <span>{count}</span>
+            <button aria-label='Decrement value' onClick={() => dispatch(decrement())}>
+                Decrement
+            </button>
             <div>
                 <Tag>react-h5-tmp</Tag>&nbsp; 是基于&nbsp; create-react-app&nbsp; 创建并使用&nbsp; antd-mobile&nbsp;
                 作为 UI 组件库的一个移动端脚手架，开箱即用。
