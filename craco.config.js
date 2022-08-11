@@ -2,7 +2,7 @@
  * @Author: zhoukaiyue 1301524439@qq.com
  * @Date: 2022-07-28 10:00:57
  * @LastEditors: zhoukai
- * @LastEditTime: 2022-08-09 23:10:55
+ * @LastEditTime: 2022-08-11 22:23:55
  * @FilePath: \react-h5\craco.config.js
  * @Description: 默认配置重置文件
  */
@@ -34,27 +34,31 @@ module.exports = {
         externals: {},
         // eslint-disable-next-line no-unused-vars
         configure: (webpackConfig, { env, paths }) => {
-            // 开发环境开启 devtool，方便开发人员快速定位错误
-            webpackConfig.devtool = shouldUseSourceMap
+            // production环境设置为false
+            // test环境如果开启shouldUseSourceMap，则设置为'source-map'，否则为false
+            // development环境设置为'cheap-module-source-map'，方便开发人员快速定位错误
+            webpackConfig.devtool = isEnvProduction
+                ? false
+                : shouldUseSourceMap
                 ? 'source-map'
                 : isEnvDevelopment
                 ? 'cheap-module-source-map'
                 : false;
 
-            // 分包
             if (!isEnvDevelopment) {
-                // webpack5 新属性
                 // 不将注释提取到单独的文件中
                 webpackConfig.optimization.minimize = true;
                 webpackConfig.optimization.minimizer = [
                     new CssMinimizerPlugin(),
+                    // https://github.com/webpack-contrib/terser-webpack-plugin#terseroptions
                     new TerserPlugin({
                         parallel: 6,
                         extractComments: false, // 不将注释提取到单独的文件中
+                        // https://github.com/terser/terser#minify-options
                         terserOptions: {
-                            ecma: undefined,
+                            ecma: 5, // specify one of: 5, 2015, 2016, etc.
+                            mangle: true, // Note `mangle.properties` is `false` by default.
                             warnings: false,
-                            parse: {},
                             format: {
                                 comments: false
                             },
@@ -66,7 +70,7 @@ module.exports = {
                         }
                     })
                 ];
-
+                // 分块打包
                 webpackConfig.optimization.splitChunks = {
                     ...webpackConfig.optimization.splitChunks,
                     // 指明要分割的插件类型, async:异步插件(动态导入),inital:同步插件,all：全部类型
@@ -100,6 +104,18 @@ module.exports = {
                             reuseExistingChunk: true
                         }
                     }
+                };
+                webpackConfig.cache = {
+                    // 将缓存类型设置为文件系统,默认是memory
+                    type: 'filesystem',
+                    buildDependencies: {
+                        // 更改配置文件时，重新缓存
+                        config: [__filename]
+                    }
+                };
+                webpackConfig.performance = {
+                    maxAssetSize: 500000,
+                    maxEntrypointSize: 500000
                 };
             }
             return webpackConfig;
