@@ -4,7 +4,7 @@
  * @Author: zhoukai
  * @Date: 2022-07-28 09:54:02
  * @LastEditors: zhoukai
- * @LastEditTime: 2022-08-12 14:24:06
+ * @LastEditTime: 2022-08-12 17:21:26
 -->
 
 # 简介
@@ -22,6 +22,25 @@ react-h5-tmp 是基于 create-react-app(v5) 创建并使用 antd-mobile 作为 U
 -   Vetur v0.35.0
 -   Eslint v2.2.6
 -   Prettier - Code formatter v9.5.0
+
+## 快速开发
+
+```
+#安装项目依赖
+npm install
+#开发环境启动
+npm run start
+#打包 test 环境代码
+npm run build:test
+#打包生产环境代码
+npm run build or npm run build:prod
+#执行 js 类型检查
+npm run lint:fix
+#执行 prettier 批量格式化代码
+npm run lint:prettier
+
+##注：详细请阅读package.json 以及对应的配置文件！
+```
 
 ## 开发规范
 
@@ -119,52 +138,58 @@ react-h5-tmp
 ├─ .eslintignore               //
 ├─ .eslintrc.js                // ESlint配置文件
 ├─ .prettierrc.js              // prettier配置文件
-├─ craco.config.js             // craco配置文件
+├─ craco.config.js             // 构建脚本（webpack配置）
 ├─ package-lock.json           //
-├─ package.json                //
+├─ package.json                // 项目描述文件
 ├─ postcss.config.js           //
 ├─ public                      //
 │  ├─ favicon.ico              //
 │  └─ index.html               //
-└─ src                         //
-   ├─ assets                   //
-   │  ├─ css                   //
+└─ src                         // 源码目录
+   ├─ assets                   // 静态资源
+   │  ├─ css                   // css
    │  │  ├─ index.scss         //
    │  │  └─ utils              //
    │  │     └─ @util.scss      //
-   │  ├─ img                   //
+   │  ├─ img                   // img
    │  │  └─ base               //
    │  │     └─ empty.png       //
-   │  └─ js                    //
-   ├─ config                   //
-   │  ├─ apis                  //
-   │  └─ router                //
+   │  └─ js                    // js
+   ├─ config                   // 项目配套的第三方包配置
+   │  ├─ apis                  // 业务模块接口配置
+   │  └─ router                // 业务模块router配置
    │     ├─ dev.js             //
    │     └─ index.js           //
-   ├─ index.js                 //
-   ├─ layout                   //
+   ├─ index.js                 // 入口js文件
+   ├─ layout                   // 布局组件
    │  ├─ frame-view            //
    │  │  ├─ index.js           //
    │  │  └─ index.scss         //
    │  └─ tabbar                //
    │     └─ index.js           //
-   ├─ packages                 //
-   │  ├─ request               //
+   ├─ packages                 // 项目配套的第三方包
+   │  ├─ request               // axios
    │  │  ├─ index.js           //
    │  │  └─ loading            //
    │  │     └─ index.js        //
-   │  └─ router                //
+   │  └─ router                // router
    │     ├─ index.js           //
    │     └─ router404.js       //
    ├─ reportWebVitals.js       //
-   ├─ resources                //
-   ├─ utils                    //
-   │  ├─ helper                //
-   │  └─ tools                 //
+   ├─ resources                // 全局基础资源如基础组件、全局插件等
+   │  ├─ components            // 基础组件
+   │  │  ├─ base-list          //
+   │  │  │  ├─ index.vue       //
+   │  │  │  └─ README.md       //
+   │  │  └─ tab                //
+   │  └─ plugin                // 全局插件
+   ├─ utils                    // 工具类
+   │  ├─ helper                // 帮助类
+   │  └─ tools                 // 其他工具类
    │     ├─ deep-clone         //
    │     └─ get-realpx         //
    │        └─ index.js        //
-   └─ views                    //
+   └─ views                    //  页面级资源
       ├─ app                   //
       │  └─ App.js             //
       ├─ dev                   //
