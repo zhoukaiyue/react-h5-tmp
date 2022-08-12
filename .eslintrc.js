@@ -4,7 +4,7 @@
  * @Author: zhoukai
  * @Date: 2022-08-01 21:34:48
  * @LastEditors: zhoukai
- * @LastEditTime: 2022-08-04 22:28:21
+ * @LastEditTime: 2022-08-12 17:34:18
  */
 module.exports = {
     root: true,
@@ -26,6 +26,6 @@ module.exports = {
         'no-debugger': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
         'react/react-in-jsx-scope': 'off',
         'no-unused-vars': ['warn', { vars: 'all', args: 'after-used', ignoreRestSiblings: false }],
-        'prettier/prettier': ['error', { singleQuote: true }]
+        'prettier/prettier': ['error', { singleQuote: true, endOfLine: 'auto' }]
     }
 };
