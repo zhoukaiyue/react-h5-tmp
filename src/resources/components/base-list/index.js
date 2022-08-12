@@ -5,7 +5,7 @@
  * @Author: zhoukai
  * @Date: 2022-08-04 15:34:42
  * @LastEditors: zhoukai
- * @LastEditTime: 2022-08-11 00:33:11
+ * @LastEditTime: 2022-08-12 16:37:57
  */
 import './index.scss';
 import React from 'react';
@@ -86,6 +86,7 @@ class BaseList extends React.Component {
     render() {
         return (
             <PullToRefresh
+                className={'base-list'}
                 onRefresh={async () => {
                     await this.onRefresh('refresh');
                 }}

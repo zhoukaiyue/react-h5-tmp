@@ -4,12 +4,13 @@
  * @Author: zhoukai
  * @Date: 2022-07-28 09:54:02
  * @LastEditors: zhoukai
- * @LastEditTime: 2022-08-10 15:20:38
+ * @LastEditTime: 2022-08-12 16:30:47
  */
 /*
  * @Description: 描述
  */
 import React from 'react';
+import '@/packages/console';
 import { createRoot } from 'react-dom/client';
 import '@/assets/css/index.scss';
 import App from '@/views/app/App';

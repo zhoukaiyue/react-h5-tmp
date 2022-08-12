@@ -2,7 +2,7 @@
  * @Author: zhoukaiyue 1301524439@qq.com
  * @Date: 2022-07-28 10:00:57
  * @LastEditors: zhoukai
- * @LastEditTime: 2022-08-11 22:23:55
+ * @LastEditTime: 2022-08-12 16:32:09
  * @FilePath: \react-h5\craco.config.js
  * @Description: 默认配置重置文件
  */
@@ -84,6 +84,11 @@ module.exports = {
                     // webpack5新属性，防止0size的chunk
                     minRemainingSize: 0,
                     cacheGroups: {
+                        'vendors/vconsole': {
+                            name: 'vendors/vconsole',
+                            test: /[\\/]node_modules[\\/]vconsole[\\/]/,
+                            priority: 7
+                        },
                         // reatc相关,都打包到vendors/react下面
                         'vendors/react-bucket': {
                             name: 'vendors/react-bucket',
@@ -115,7 +120,7 @@ module.exports = {
                 };
                 webpackConfig.performance = {
                     maxAssetSize: 500000,
-                    maxEntrypointSize: 500000
+                    maxEntrypointSize: 1000000
                 };
             }
             return webpackConfig;
