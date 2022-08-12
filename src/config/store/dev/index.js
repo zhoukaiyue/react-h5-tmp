@@ -4,11 +4,11 @@
  * @Author: zhoukai
  * @Date: 2022-08-10 10:03:36
  * @LastEditors: zhoukai
- * @LastEditTime: 2022-08-10 11:13:41
+ * @LastEditTime: 2022-08-12 14:03:48
  */
 import { createSlice } from '@reduxjs/toolkit';
 
-export const dev = createSlice({
+const dev = createSlice({
     name: 'dev',
     // 初始状态
     initialState: {
@@ -28,6 +28,8 @@ export const dev = createSlice({
     }
 });
 
-// 导出生成的 slice reducer 和 action creators
+// 导出 action 和 reducer
 export const { add, reduce, decrease } = dev.actions;
-export default dev.reducer;
+export default {
+    dev: dev.reducer
+};
