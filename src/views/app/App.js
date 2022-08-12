@@ -2,7 +2,7 @@
  * @Author: zhoukaiyue 1301524439@qq.com
  * @Date: 2022-07-28 09:54:02
  * @LastEditors: zhoukai
- * @LastEditTime: 2022-08-09 22:46:40
+ * @LastEditTime: 2022-08-12 14:16:05
  * @FilePath: \react-h5\src\App.js
  * @Description: 顶级 router-view
  */
@@ -11,7 +11,7 @@ import React, { Suspense } from 'react';
 
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import routers from '@/packages/router';
-import routerLoading from '../components/routerLoading';
+import TheLazyLoading from '@/views/components/TheLazyLoading';
 
 // 设置网页title
 // eslint-disable-next-line react/prop-types
@@ -28,7 +28,7 @@ const ROUTER_BASE = process.env.REACT_APP_ROUTER_BASE;
 const App = () => {
     return (
         <Router basename={ROUTER_BASE}>
-            <Suspense fallback={routerLoading}>
+            <Suspense fallback={TheLazyLoading}>
                 <Routes>
                     {routers.map((item, index) => {
                         return item.path === '/' ? (

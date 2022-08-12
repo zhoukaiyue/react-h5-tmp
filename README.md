@@ -4,7 +4,7 @@
  * @Author: zhoukai
  * @Date: 2022-07-28 09:54:02
  * @LastEditors: zhoukai
- * @LastEditTime: 2022-08-10 11:16:14
+ * @LastEditTime: 2022-08-12 14:19:57
 -->
 
 # 简介
@@ -32,10 +32,11 @@ react-h5-tmp 是基于 create-react-app 创建并使用 antd-mobile 作为 UI �
 ```
 例子：
 src
-└─ components
-   |- BaseButton.vue
-   |- BaseTable.vue
-   |- BaseIcon.vue
+└─ resources
+   └─ components
+      |- BaseButton.vue
+      |- BaseTable.vue
+      |- BaseIcon.vue
 ```
 
 ### 业务组件名。 【注：src/views/components 目录。】
@@ -114,7 +115,7 @@ src
 react-h5-tmp
 ├─ .env.development            // 开发环境配置文件
 ├─ .env.production             // 生产环境配置文件
-├─ .env.test                   // 测试环境配置文件
+├─ .env.test                   // 灰度 or 测试 or or uat环境配置文件
 ├─ .eslintignore               //
 ├─ .eslintrc.js                // ESlint配置文件
 ├─ .prettierrc.js              // prettier配置文件
