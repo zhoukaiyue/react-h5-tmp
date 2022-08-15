@@ -2,7 +2,7 @@
  * @Author: zhoukaiyue 1301524439@qq.com
  * @Date: 2022-07-28 10:00:57
  * @LastEditors: zhoukai
- * @LastEditTime: 2022-08-12 16:32:09
+ * @LastEditTime: 2022-08-15 15:23:47
  * @FilePath: \react-h5\craco.config.js
  * @Description: 默认配置重置文件
  */
@@ -157,7 +157,7 @@ module.exports = {
         // 查阅 https://github.com/vuejs/vue-doc-zh-cn/vue-cli/cli-service.md#配置代理
         proxy: {
             '/proxy_url': {
-                target: process.env.VUE_APP_PROXY_URL,
+                target: process.env.REACT_APP_PROXY_URL,
                 changeOrigin: true,
                 secure: false,
                 ws: true,
