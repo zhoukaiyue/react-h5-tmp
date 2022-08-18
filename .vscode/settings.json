@@ -8,5 +8,6 @@
     "ProjectTree.loadIgnore": true,
     "editor.codeActionsOnSave": {
         "source.fixAll.eslint": true
-    }
+    },
+    "js/ts.implicitProjectConfig.checkJs": true
 }

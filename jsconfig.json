@@ -1,26 +1,13 @@
 {
     "compilerOptions": {
-        "target": "es5",
-        "module": "esnext",
         "baseUrl": "./",
-        "jsx": "preserve", //在这里添加"jsx": "preserve",
-        "moduleResolution": "node",
         "paths": {
-            "@/*": [
-                "src/*"
-            ]
+            "@/*": ["src/*"]
         },
-        "lib": [
-            "esnext",
-            "dom",
-            "dom.iterable",
-            "scripthost"
-        ]
+        "target": "ES6",
+        "module": "commonjs",
+        "allowSyntheticDefaultImports": true
     },
-    //提高 IDE 性能
-    "exclude": [
-        "node_modules",
-        "dist",
-        "build"
-    ]
+    "include": ["src/**/*"],
+    "exclude": ["node_modules", "dist", "build"]
 }
