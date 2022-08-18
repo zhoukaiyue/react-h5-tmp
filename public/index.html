@@ -4,7 +4,7 @@
  * @Author: zhoukai
  * @Date: 2022-07-28 09:54:02
  * @LastEditors: zhoukai
- * @LastEditTime: 2022-08-04 23:16:15
+ * @LastEditTime: 2022-08-18 13:51:19
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -33,6 +33,17 @@
       padding-bottom: env(safe-area-inset-bottom);
     }
   </style>
+  <script>
+    if (!Object.entries) {
+      Object.entries = function (obj) {
+        const ownProps = Object.keys(obj);
+        let i = ownProps.length;
+        const resArray = new Array(i); // preallocate the Array
+        while (i--) resArray[i] = [ownProps[i], obj[ownProps[i]]];
+        return resArray;
+      };
+    }
+  </script>
 </head>
 
 <body>

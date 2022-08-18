@@ -1,17 +1,23 @@
 {
     "compilerOptions": {
-        "baseUrl": ".",
+        "target": "es5",
+        "module": "esnext",
+        "baseUrl": "./",
+        "jsx": "preserve", //在这里添加"jsx": "preserve",
+        "moduleResolution": "node",
         "paths": {
             "@/*": [
                 "src/*"
             ]
         },
-        "target": "ES6",
-        "allowSyntheticDefaultImports": true
+        "lib": [
+            "esnext",
+            "dom",
+            "dom.iterable",
+            "scripthost"
+        ]
     },
-    "include": [
-        "src/**/*"
-    ],
+    //提高 IDE 性能
     "exclude": [
         "node_modules",
         "dist",
