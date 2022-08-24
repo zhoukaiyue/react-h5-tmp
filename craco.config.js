@@ -2,7 +2,7 @@
  * @Author: zhoukaiyue 1301524439@qq.com
  * @Date: 2022-07-28 10:00:57
  * @LastEditors: zhoukai
- * @LastEditTime: 2022-08-15 15:23:47
+ * @LastEditTime: 2022-08-23 10:56:51
  * @FilePath: \react-h5\craco.config.js
  * @Description: 默认配置重置文件
  */
@@ -58,14 +58,14 @@ module.exports = {
                         terserOptions: {
                             ecma: 5, // specify one of: 5, 2015, 2016, etc.
                             mangle: true, // Note `mangle.properties` is `false` by default.
-                            warnings: false,
+                            // warnings: false,
                             format: {
                                 comments: false
                             },
                             compress: {
                                 drop_console: isEnvProduction, // 生产环境下移除控制台所有的内容
                                 drop_debugger: false, // 移除断点
-                                pure_funcs: isEnvProduction ? ['console.log'] : '' // 生产环境下移除console
+                                pure_funcs: isEnvProduction ? ['console.log'] : [] // 生产环境下移除console
                             }
                         }
                     })
