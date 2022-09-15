@@ -4,7 +4,7 @@
  * @Author: zhoukai
  * @Date: 2022-07-28 09:54:02
  * @LastEditors: zhoukai
- * @LastEditTime: 2022-08-12 17:21:26
+ * @LastEditTime: 2022-09-16 02:31:28
 -->
 
 # 简介
@@ -143,10 +143,11 @@ react-h5-tmp
 ├─ package.json                // 项目描述文件
 ├─ postcss.config.js           //
 ├─ public                      //
-│  ├─ favicon.ico              //
-│  └─ index.html               //
+│  ├─ index.html               //
+│  └─ static                   // 静态资源
+│     └─ favicon.ico           //
 └─ src                         // 源码目录
-   ├─ assets                   // 静态资源
+   ├─ assets                   // 静态资源 hash处理
    │  ├─ css                   // css
    │  │  ├─ index.scss         //
    │  │  └─ utils              //

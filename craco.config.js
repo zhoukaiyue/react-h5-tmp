@@ -2,7 +2,7 @@
  * @Author: zhoukaiyue 1301524439@qq.com
  * @Date: 2022-07-28 10:00:57
  * @LastEditors: zhoukai
- * @LastEditTime: 2022-08-23 10:56:51
+ * @LastEditTime: 2022-09-16 02:28:49
  * @FilePath: \react-h5\craco.config.js
  * @Description: 默认配置重置文件
  */
@@ -19,7 +19,6 @@ const isEnvTest = process.env.REACT_APP_MODE === 'test';
 const isEnvProduction = process.env.REACT_APP_MODE === 'production';
 // Source maps are resource heavy and can cause out of memory issue for large source files.
 const shouldUseSourceMap = process.env.REACT_APP_GENERATE_SOURCEMAP === 'true';
-
 module.exports = {
     // webpack 配置
     webpack: {
@@ -34,6 +33,16 @@ module.exports = {
         externals: {},
         // eslint-disable-next-line no-unused-vars
         configure: (webpackConfig, { env, paths }) => {
+            // 输出文件目录更改 js、媒体类
+            webpackConfig.output = {
+                ...webpackConfig.output,
+                ...{
+                    filename: 'assets/js/[name].[contenthash:8].js',
+                    // There are also additional JS chunk files if you use code splitting.
+                    chunkFilename: 'assets/js/[name].[contenthash:8].chunk.js',
+                    assetModuleFilename: 'assets/media/[name].[hash][ext]'
+                }
+            };
             // production环境设置为false
             // test环境如果开启shouldUseSourceMap，则设置为'source-map'，否则为false
             // development环境设置为'cheap-module-source-map'，方便开发人员快速定位错误
@@ -46,6 +55,9 @@ module.exports = {
                 : false;
 
             if (!isEnvDevelopment) {
+                // 输出文件目录更改 css
+                webpackConfig.plugins[5].options.filename = 'assets/css/[name].[contenthash:8].css';
+                webpackConfig.plugins[5].options.chunkFilename = 'assets/css/[name].[contenthash:8].chunk.css';
                 // 不将注释提取到单独的文件中
                 webpackConfig.optimization.minimize = true;
                 webpackConfig.optimization.minimizer = [
