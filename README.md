@@ -148,13 +148,17 @@ src
 
 ### Commit 规范
 
--   feat: 新功能、新特性
--   fix: 修改 bug
--   perf: 更改代码，以提高性能
--   docs: 文档修改
--   style: 代码格式修改, 注意不是 css 修改（例如分号修改）
--   test: 测试用例新增、修改
--   build: 影响项目构建或依赖项修改
+- feat 新增功能
+- fix 修复 bug
+- docs 文档变更
+- style 代码格式（不影响功能，例如空格、分号等格式修正）
+- refactor 代码重构
+- perf 改善性能
+- test 测试
+- build 变更项目构建或外部依赖（例如 scopes: webpack、gulp、npm 等）
+- ci 更改持续集成软件的配置文件和 package 中的 scripts 命令，例如 scopes: Travis, Circle 等
+- chore 变更构建流程或辅助工具
+- revert 代码回退
 
 ### Tag 版本号
 
