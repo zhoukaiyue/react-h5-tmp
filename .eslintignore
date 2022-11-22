@@ -1,4 +1,18 @@
 .vscode
-/build/
-/node_modules/
-public
+.git
+
+# dependencies
+/node_modules
+/.pnp
+.pnp.js
+# testing
+/coverage
+
+# production
+/build
+/dist
+/public
+
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
