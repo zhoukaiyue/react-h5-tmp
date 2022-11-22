@@ -11,6 +11,7 @@
         "antd-mobile": "5.20.0",
         "antd-mobile-icons": "^0.3.0",
         "axios": "0.27.2",
+        "css-minimizer-webpack-plugin": "^4.2.2",
         "dotenv-cli": "6.0.0",
         "es6-proxy-polyfill": "2.1.1",
         "eslint-plugin-react-hooks": "4.6.0",
