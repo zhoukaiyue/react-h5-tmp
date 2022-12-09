@@ -4,7 +4,7 @@
  * @Author: zhoukai
  * @Date: 2022-11-21 15:28:16
  * @LastEditors: zhoukai
- * @LastEditTime: 2022-11-22 10:07:31
+ * @LastEditTime: 2022-12-09 15:27:49
  * @名词解释：
  * 1、如何判定重复请求?
  * 答：如果请求地址、请求方式、请求参数一样，那么我们就能认为是同一个请求。
@@ -13,7 +13,7 @@
 import axios from 'axios';
 
 // 根据当前请求的信息，生成请求 Key
-import { generateReqKey } from '../utils/generateReqKey';
+import { generateReqKey } from './utils/generateReqKey';
 
 // Map对象保存键值对。任何值(对象或者原始值) 都可以作为一个键或一个值。
 const pendingMap = new Map();

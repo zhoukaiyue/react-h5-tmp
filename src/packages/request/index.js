@@ -4,7 +4,7 @@
  * @Author: zhoukai
  * @Date: 2022-08-08 10:53:58
  * @LastEditors: zhoukai
- * @LastEditTime: 2022-11-22 11:09:52
+ * @LastEditTime: 2022-12-09 17:01:46
  */
 import axios from 'axios';
 import QS from 'qs';
@@ -14,9 +14,11 @@ import laoding from './loading';
 import { againRequest } from './retry';
 // 取消重复请求
 import { addPendingMap, removePendingRequest } from './cancel';
+// http错误状态码处理
+import { httpErrorStatusHandle } from './httpErrorStatusHandle';
 
 //  将自动加在 `url` 前面，除非 `url` 是一个绝对 URL。
-axios.defaults.baseURL = process.env.REACT_APP_AXIOS_BASEURL;
+axios.defaults.baseURL = process.env.VUE_APP_AXIOS_BASEURL;
 // 表示跨域请求时是否需要使用凭证
 axios.defaults.withCredentials = true;
 // 请求超时时间设定
@@ -58,6 +60,15 @@ const retryConfig = {
     frequency: 3, // 重试次数（重试频率）
     delay: 3000 // 延迟时间
 };
+
+/**
+ * 是否开启接口错误信息展示，默认为true
+ * 开启该功能则意味着请求错误时，会提示错误信息
+ *
+ * 须知：
+ * 1、该属性是全局的，如果你想在某个请求上面禁止使用该功能，则需要在【指定配置】②中设置 enableErrorMessage:false。
+ */
+const enableErrorMessage = true;
 
 /** 拦截器之请求拦截器 */
 axios.interceptors.request.use(
@@ -110,6 +121,9 @@ axios.interceptors.response.use(
             // 请求重发
             return againRequest(error, axios, retryConfig);
         }
+
+        // 处理错误状态码
+        enableErrorMessage && httpErrorStatusHandle(error, axios);
 
         // 对响应错误做点什么
         return Promise.reject(error);
