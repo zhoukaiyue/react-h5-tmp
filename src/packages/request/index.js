@@ -4,7 +4,7 @@
  * @Author: zhoukai
  * @Date: 2022-08-08 10:53:58
  * @LastEditors: zhoukai
- * @LastEditTime: 2022-12-09 17:01:46
+ * @LastEditTime: 2022-12-09 17:18:27
  */
 import axios from 'axios';
 import QS from 'qs';
@@ -18,7 +18,7 @@ import { addPendingMap, removePendingRequest } from './cancel';
 import { httpErrorStatusHandle } from './httpErrorStatusHandle';
 
 //  将自动加在 `url` 前面，除非 `url` 是一个绝对 URL。
-axios.defaults.baseURL = process.env.VUE_APP_AXIOS_BASEURL;
+axios.defaults.baseURL = process.env.REACT_APP_AXIOS_BASEURL;
 // 表示跨域请求时是否需要使用凭证
 axios.defaults.withCredentials = true;
 // 请求超时时间设定
