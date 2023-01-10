@@ -4,13 +4,13 @@
  * @Author: zhoukai
  * @Date: 2022-08-03 10:02:00
  * @LastEditors: zhoukai
- * @LastEditTime: 2022-08-12 14:15:27
+ * @LastEditTime: 2023-01-10 16:13:06
  */
 import './index.scss';
-const TheLazyLoading = (
-    <div className='the-lazy-loading'>
+const TheLoading = (
+    <div className='the-loading'>
         <div className='cont'></div>
     </div>
 );
 
-export default TheLazyLoading;
+export default TheLoading;
