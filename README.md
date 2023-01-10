@@ -4,13 +4,15 @@
  * @Author: zhoukai
  * @Date: 2022-07-28 09:54:02
  * @LastEditors: zhoukai
- * @LastEditTime: 2022-10-20 14:48:26
+ * @LastEditTime: 2023-01-10 16:29:53
 -->
 
 # 简介
 
-react-h5-tmp 是基于 create-react-app(v5) 创建并使用 antd-mobile 作为 UI 组件库的一个移动端脚手架，开箱即用。
-另使用 craco（一个对 create-react-app 进行自定义配置的社区解决方案） 对 create-react-app 的默认配置进行自定义设置。
+react-h5-tmp 是基于 create-react-app(v5) 创建并使用 Ant Design Mobile + JavaScript + craco + Redux + sass + Rem 布局适配 + axios（封装）+ Eslint + Prettier 等流行技术栈构建移动端模板脚手架，开箱即用。
+
+craco 是什么？
+craco（一个对 create-react-app 进行自定义配置的社区解决方案） 对 create-react-app 的默认配置进行自定义设置。
 
 ## 环境要求
 
@@ -58,30 +60,32 @@ pnpm lint:prettier
 
 ### 基础组件名。 【注：src/components 目录。】
 
-> 应该全部以一个特定的前缀 Base 开头。
+> 基础组件文件命名应该以 base 为前缀命名，以示其唯一性，并且以横线连接。
 
 ```
 例子：
 src
 └─ resources
    └─ components
-      |- BaseButton.vue
-      |- BaseTable.vue
-      |- BaseIcon.vue
+      └─ base-list
+         ├─ index.js      //源码
+         ├─ index.scss    //样式
+         └─ README.md     //组件使用说明文档
 ```
 
 ### 业务组件名。 【注：src/views/components 目录。】
 
-> 应该全部以一个特定的前缀 The 开头。
+> 业务组件文件命名应该以 the 为前缀命名，以示其唯一性，并且以横线连接。
 
 ```
 例子：
 src
 └─ views
    └─ components
-      |- TheButton.vue
-      |- TheTable.vue
-      |- TheIcon.vue
+      └─ the-loading
+         ├─ index.js      //源码
+         ├─ index.scss    //样式
+         └─ README.md     //组件使用说明文档
 ```
 
 ### 路由文件创建与命名。 【注：src/config/router 目录。】
@@ -148,17 +152,17 @@ src
 
 ### Commit 规范
 
-- feat 新增功能
-- fix 修复 bug
-- docs 文档变更
-- style 代码格式（不影响功能，例如空格、分号等格式修正）
-- refactor 代码重构
-- perf 改善性能
-- test 测试
-- build 变更项目构建或外部依赖（例如 scopes: webpack、gulp、npm 等）
-- ci 更改持续集成软件的配置文件和 package 中的 scripts 命令，例如 scopes: Travis, Circle 等
-- chore 变更构建流程或辅助工具
-- revert 代码回退
+-   feat 新增功能
+-   fix 修复 bug
+-   docs 文档变更
+-   style 代码格式（不影响功能，例如空格、分号等格式修正）
+-   refactor 代码重构
+-   perf 改善性能
+-   test 测试
+-   build 变更项目构建或外部依赖（例如 scopes: webpack、gulp、npm 等）
+-   ci 更改持续集成软件的配置文件和 package 中的 scripts 命令，例如 scopes: Travis, Circle 等
+-   chore 变更构建流程或辅助工具
+-   revert 代码回退
 
 ### Tag 版本号
 
@@ -167,79 +171,129 @@ src
 ## 项目目录说明
 
 ```
-react-h5-tmp
-├─ .env.development            // 开发环境配置文件
-├─ .env.production             // 生产环境配置文件
-├─ .env.test                   // 灰度 or 测试 or or uat环境配置文件
-├─ .eslintignore               //
-├─ .eslintrc.js                // ESlint配置文件
-├─ .prettierrc.js              // prettier配置文件
-├─ craco.config.js             // 构建脚本（webpack配置）
-├─ package-lock.json           //
-├─ package.json                // 项目描述文件
-├─ postcss.config.js           //
-├─ public                      //
-│  ├─ index.html               //
-│  └─ static                   // 静态资源
-│     └─ favicon.ico           //
-└─ src                         // 源码目录
-   ├─ assets                   // 静态资源 hash处理
-   │  ├─ css                   // css
-   │  │  ├─ index.scss         //
-   │  │  └─ utils              //
-   │  │     └─ @util.scss      //
-   │  ├─ img                   // img
-   │  │  └─ base               //
-   │  │     └─ empty.png       //
-   │  └─ js                    // js
-   ├─ config                   // 项目配套的第三方包配置
-   │  ├─ apis                  // 业务模块接口配置
-   │  └─ router                // 业务模块router配置
-   │     ├─ dev.js             //
-   │     └─ index.js           //
-   ├─ index.js                 // 入口js文件
-   ├─ layout                   // 布局组件
-   │  ├─ frame-view            //
-   │  │  ├─ index.js           //
-   │  │  └─ index.scss         //
-   │  └─ tabbar                //
-   │     └─ index.js           //
-   ├─ packages                 // 项目配套的第三方包
-   │  ├─ request               // axios
-   │  │  ├─ index.js           //
-   │  │  └─ loading            //
-   │  │     └─ index.js        //
-   │  └─ router                // router
-   │     ├─ index.js           //
-   │     └─ router404.js       //
-   ├─ reportWebVitals.js       //
-   ├─ resources                // 全局基础资源如基础组件、全局插件等
-   │  ├─ components            // 基础组件
-   │  │  ├─ base-list          //
-   │  │  │  ├─ index.vue       //
-   │  │  │  └─ README.md       //
-   │  │  └─ tab                //
-   │  └─ plugin                // 全局插件
-   ├─ utils                    // 工具类
-   │  ├─ helper                // 帮助类
-   │  └─ tools                 // 其他工具类
-   │     ├─ deep-clone         //
-   │     └─ get-realpx         //
-   │        └─ index.js        //
-   └─ views                    //  页面级资源
-      ├─ app                   //
-      │  └─ App.js             //
-      ├─ dev                   //
-      │  ├─ components         //
-      │  │  ├─ layOut          //
-      │  │  │  └─ index.js     //
-      │  │  └─ list            //
-      │  └─ index.js           //
-      ├─ err404                //
-      │  ├─ index.js           //
-      │  └─ index.scss         //
-      └─ index                 //
-         ├─ index.js           //
-         └─ index.scss         //
+react-h5-tmp                            //
+├─ .env.development                     // 开发环境配置文件
+├─ .env.production                      // 生产环境配置文件
+├─ .env.test                            // 灰度 or 测试 or or uat环境配置文件
+├─ .eslintignore                        //
+├─ .eslintrc.js                         // ESlint配置文件
+├─ .npmrc                               //
+├─ .prettierrc.js                       // prettier配置文件
+├─ .vscode                              //
+│  └─ settings.json                     //
+├─ babel.config.js                      //
+├─ craco.config.js                      // 构建脚本（webpack配置）
+├─ jsconfig.json                        //
+├─ package.json                         //
+├─ pnpm-lock.yaml                       //
+├─ postcss.config.js                    //
+├─ public                               //
+│  ├─ index.html                        // 入口文件
+│  └─ static                            // 静态资源
+│     └─ favicon.ico                    //
+├─ README.md                            // 项目描述文件
+└─ src                                  // 业务代码
+   ├─ assets                            // 静态资源 hash处理
+   │  ├─ css                            // css
+   │  │  ├─ index.scss                  //
+   │  │  └─ utils                       //
+   │  │     └─ @util.scss               //
+   │  ├─ img                            // img
+   │  │  └─ base                        //
+   │  │     ├─ empty.png                //
+   │  │     └─ loading@2x.gif           //
+   │  └─ js                             // js
+   ├─ config                            // 业务配置目录
+   │  ├─ apis                           // 所有接口相关
+   │  │  ├─ index.js                    //
+   │  │  └─ list.js                     //
+   │  ├─ router                         // 所有路由相关
+   │  │  ├─ dev.js                      //
+   │  │  └─ index.js                    //
+   │  └─ store                          // 状态商店（所有全局状态管理相关）
+   │     └─ dev                         //
+   │        └─ index.js                 //
+   ├─ index.js                          // 入口js文件
+   ├─ layout                            // 布局组件
+   │  ├─ frame-view                     //
+   │  │  ├─ index.js                    //
+   │  │  └─ index.scss                  //
+   │  ├─ README.md                      //
+   │  └─ tabbar                         //
+   │     └─ index.js                    //
+   ├─ packages                          // 项目配套的第三方包
+   │  ├─ console                        // vConsole配置
+   │  │  └─ index.js                    //
+   │  ├─ request                        // axios请求库封装
+   │  │  ├─ cancel                      //
+   │  │  │  ├─ index.js                 //
+   │  │  │  └─ utils                    //
+   │  │  │     └─ generateReqKey.js     //
+   │  │  ├─ httpErrorStatusHandle       //
+   │  │  │  └─ index.js                 //
+   │  │  ├─ index.js                    //
+   │  │  ├─ loading                     //
+   │  │  │  └─ index.js                 //
+   │  │  ├─ README.md                   //
+   │  │  └─ retry                       //
+   │  │     └─ index.js                 //
+   │  ├─ router                         // router 核心封装(集中导出)
+   │  │  ├─ index.js                    //
+   │  │  └─ router404.js                //
+   │  └─ store                          // Redux 核心封装(集中导出)
+   │     ├─ index.js                    //
+   │     └─ modules.js                  //
+   ├─ reportWebVitals.js                //
+   ├─ resources                         // 全局基础资源如基础组件、全局插件等
+   │  ├─ components                     // 基础组件
+   │  │  └─ base-list                   //
+   │  │     ├─ index.js                 //
+   │  │     ├─ index.scss               //
+   │  │     └─ README.md                //
+   │  └─ plugin                         // 全局插件
+   ├─ utils                             // 工具库
+   │  ├─ helper                         // 帮助类
+   │  │  └─ env.js                      //
+   │  └─ tools                          // 其他工具类
+   │     ├─ eventBus                    //
+   │     │  └─ index.js                 //
+   │     ├─ get-realpx                  //
+   │     │  └─ index.js                 //
+   │     ├─ sleep.js                    //
+   │     └─ validate.js                 //
+   └─ views                             // 视图
+      ├─ app                            //
+      │  └─ App.js                      //
+      ├─ components                     //
+      │  └─ the-loading                 //
+      │     ├─ index.js                 //
+      │     └─ index.scss               //
+      ├─ dev                            //
+      │  ├─ components                  //
+      │  │  ├─ eventBus                 //
+      │  │  │  ├─ components            //
+      │  │  │  │  ├─ children.js        //
+      │  │  │  │  └─ find.js            //
+      │  │  │  └─ index.js              //
+      │  │  ├─ layOut                   //
+      │  │  │  └─ index.js              //
+      │  │  ├─ list                     //
+      │  │  │  ├─ index.js              //
+      │  │  │  └─ index.scss            //
+      │  │  ├─ lodashjs                 //
+      │  │  │  └─ index.js              //
+      │  │  ├─ redux                    //
+      │  │  │  ├─ index.js              //
+      │  │  │  └─ index.scss            //
+      │  │  └─ tabbar                   //
+      │  │     └─ index.js              //
+      │  ├─ index.js                    //
+      │  └─ index.scss                  //
+      ├─ err404                         //
+      │  ├─ index.js                    //
+      │  └─ index.scss                  //
+      └─ index                          //
+         ├─ index.js                    //
+         └─ index.scss                  //
 
 ```

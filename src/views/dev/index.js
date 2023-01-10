@@ -4,7 +4,7 @@
  * @Author: zhoukai
  * @Date: 2022-07-29 14:31:25
  * @LastEditors: zhoukai
- * @LastEditTime: 2022-08-12 14:24:25
+ * @LastEditTime: 2023-01-10 16:35:20
  */
 import './index.scss';
 import FrameView from '@/layout/frame-view';
@@ -42,8 +42,9 @@ function Dev() {
     const CONT_TMP = (
         <div>
             <div>
-                <Tag>react-h5-tmp</Tag>&nbsp; 是基于&nbsp; create-react-app(v5)&nbsp; 创建并使用&nbsp; antd-mobile&nbsp;
-                作为 UI 组件库的一个移动端脚手架，开箱即用。
+                <Tag>react-h5-tmp</Tag>是基于 create-react-app(v5) 创建并使用 Ant Design Mobile + JavaScript + craco +
+                Redux + sass + Rem 布局适配 + axios（封装）+ Eslint + Prettier
+                等流行技术栈构建移动端模板脚手架，开箱即用。
             </div>
             <div style={{ padding: '12px 0' }}>下面是一些基础组件的使用demo，可以点进去试一试</div>
             <div className='nav'>
