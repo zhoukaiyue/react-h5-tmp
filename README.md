@@ -4,7 +4,7 @@
  * @Author: zhoukai
  * @Date: 2022-07-28 09:54:02
  * @LastEditors: zhoukai
- * @LastEditTime: 2023-01-10 16:29:53
+ * @LastEditTime: 2023-02-08 11:02:51
 -->
 
 # 简介
@@ -57,6 +57,7 @@ pnpm lint:prettier
 -   🚀 不要在钩子函数中写大量业务代码；
 -   🚀 异步使用 aysnc await 语法；
 -   🚀 不是常用的方法不要全局挂载；
+-   🚀 文件命名如果是多单词则采用驼峰命名或者烤肉串大小写，尽量简洁明了；
 
 ### 基础组件名。 【注：src/components 目录。】
 
