@@ -2,6 +2,7 @@
 setlocal EnableDelayedExpansion
 set counter=1
 
+
 echo "请选择要执行的脚本命令："
 
 
@@ -14,7 +15,11 @@ for /f "tokens=*" %%a in ('node -p "Object.keys(require('./package.json').script
 
 set /p choice="请输入选择的序号："
 
-
+ 
 echo Running script: !option[%choice%]!
 
-npm run !option[%choice%]!
+
+npm run !option[%choice%]! 2>error.log || (
+  echo "发生错误。 检查 error.log 了解详细信息。"
+  pause
+)
