@@ -4,7 +4,7 @@
  * @Author: zhoukai
  * @Date: 2022-07-28 09:54:02
  * @LastEditors: zhoukai
- * @LastEditTime: 2023-02-08 11:02:51
+ * @LastEditTime: 2023-04-21 11:32:43
 -->
 
 # 简介
@@ -42,6 +42,11 @@ pnpm lint:fix
 pnpm lint:prettier
 
 ##注：详细请阅读package.json 以及对应的环境配置文件（即.env 文件）！
+```
+
+```text
+同时在项目根目录下包含一个 run.bat，该文件会列出所有 package.json 中 script 块里面的所有命令，
+通过双击该文件，你可以在命令行中输入相应的序号并按 Enter 键，程序将运行你选择的脚本。
 ```
 
 ## 开发基础规范
@@ -193,6 +198,7 @@ react-h5-tmp                            //
 │  └─ static                            // 静态资源
 │     └─ favicon.ico                    //
 ├─ README.md                            // 项目描述文件
+├─ run.bat                              // 批处理文件
 └─ src                                  // 业务代码
    ├─ assets                            // 静态资源 hash处理
    │  ├─ css                            // css
