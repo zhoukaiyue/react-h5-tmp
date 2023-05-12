@@ -4,7 +4,7 @@
  * @Author: zhoukai
  * @Date: 2022-07-28 09:54:02
  * @LastEditors: zhoukai
- * @LastEditTime: 2023-04-21 11:32:43
+ * @LastEditTime: 2023-05-12 11:13:38
 -->
 
 # 简介
@@ -28,6 +28,8 @@ craco（一个对 create-react-app 进行自定义配置的社区解决方案）
 ## 快速开发
 
 ```
+#通过 npm 安装 pnpm (如果本地已安装pnpm,请忽略)
+npm install -g pnpm
 #安装项目依赖
 pnpm install
 #开发环境启动
