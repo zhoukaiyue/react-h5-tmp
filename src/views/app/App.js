@@ -2,7 +2,7 @@
  * @Author: zhoukaiyue 1301524439@qq.com
  * @Date: 2022-07-28 09:54:02
  * @LastEditors: zhoukai
- * @LastEditTime: 2023-01-10 16:13:47
+ * @LastEditTime: 2023-05-31 23:51:00
  * @FilePath: \react-h5\src\App.js
  * @Description: 顶级 router-view
  */
@@ -42,6 +42,8 @@ const App = () => {
                             />
                         );
                     })}
+                    {/* 匹配不到的路由重定向到 /err404 */}
+                    <Route path='*' element={<Navigate replace to={'/err404'} />}></Route>
                 </Routes>
             </Suspense>
         </Router>

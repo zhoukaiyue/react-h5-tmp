@@ -7,8 +7,6 @@
  * @LastEditTime: 2022-08-05 16:54:08
  */
 
-import router404 from './router404.js';
-
 const modulesFiles = require.context('@/config/router', true, /\.js$/);
 const modules = modulesFiles.keys().reduce((modules, modulePath) => {
     const moduleName = modulePath.replace(/^\.\/(.*)\.\w+$/, '$1');
@@ -29,8 +27,5 @@ for (const key in modules) {
 
     routers.push(...modules[key]);
 }
-// 404页面
-
-routers.push(...router404);
 
 export default routers;
