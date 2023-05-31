@@ -4,7 +4,7 @@
  * @Author: zhoukai
  * @Date: 2022-07-28 09:54:02
  * @LastEditors: zhoukai
- * @LastEditTime: 2023-05-12 11:13:38
+ * @LastEditTime: 2023-05-31 23:54:27
 -->
 
 # 简介
@@ -247,8 +247,7 @@ react-h5-tmp                            //
    │  │  └─ retry                       //
    │  │     └─ index.js                 //
    │  ├─ router                         // router 核心封装(集中导出)
-   │  │  ├─ index.js                    //
-   │  │  └─ router404.js                //
+   │  │  └─ index.js                    //
    │  └─ store                          // Redux 核心封装(集中导出)
    │     ├─ index.js                    //
    │     └─ modules.js                  //
