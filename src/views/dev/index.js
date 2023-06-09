@@ -4,7 +4,7 @@
  * @Author: zhoukai
  * @Date: 2022-07-29 14:31:25
  * @LastEditors: zhoukai
- * @LastEditTime: 2023-01-10 16:35:20
+ * @LastEditTime: 2023-06-09 11:06:55
  */
 import './index.scss';
 import FrameView from '@/layout/frame-view';
@@ -19,14 +19,6 @@ function Dev() {
             label: 'layOut 布局组件的使用'
         },
         {
-            path: '/dev/list',
-            label: 'list 下拉刷新滚动加载列表'
-        },
-        {
-            path: '/dev/lodashjs',
-            label: 'lodashjs 库的使用规范'
-        },
-        {
             path: '/dev/tabbar',
             label: 'tabbar 底部标签栏'
         },
@@ -37,6 +29,10 @@ function Dev() {
         {
             path: '/dev/eventBus',
             label: 'EventBus事件总线的使用'
+        },
+        {
+            path: '/dev/tool',
+            label: '脚手架已经集成的工具库'
         }
     ];
     const CONT_TMP = (
