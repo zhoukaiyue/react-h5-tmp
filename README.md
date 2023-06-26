@@ -4,7 +4,7 @@
  * @Author: zhoukai
  * @Date: 2022-07-28 09:54:02
  * @LastEditors: zhoukai
- * @LastEditTime: 2023-05-31 23:54:27
+ * @LastEditTime: 2023-06-26 09:51:08
 -->
 
 # 简介
@@ -179,10 +179,10 @@ src
 ## 项目目录说明
 
 ```
-react-h5-tmp                            //
+react-h5-tmp
 ├─ .env.development                     // 开发环境配置文件
 ├─ .env.production                      // 生产环境配置文件
-├─ .env.test                            // 灰度 or 测试 or or uat环境配置文件
+├─ .env.test                            // 测试环境配置文件
 ├─ .eslintignore                        //
 ├─ .eslintrc.js                         // ESlint配置文件
 ├─ .npmrc                               //
@@ -196,44 +196,45 @@ react-h5-tmp                            //
 ├─ pnpm-lock.yaml                       //
 ├─ postcss.config.js                    //
 ├─ public                               //
-│  ├─ index.html                        // 入口文件
+│  ├─ index.html                        // template模板
 │  └─ static                            // 静态资源
 │     └─ favicon.ico                    //
-├─ README.md                            // 项目描述文件
-├─ run.bat                              // 批处理文件
-└─ src                                  // 业务代码
+├─ README.md                            // 项目使用说明文档
+├─ run.bat                              // 批处理文件脚本
+└─ src                                  // 业务模块
    ├─ assets                            // 静态资源 hash处理
-   │  ├─ css                            // css
+   │  ├─ css                            //
    │  │  ├─ index.scss                  //
    │  │  └─ utils                       //
    │  │     └─ @util.scss               //
-   │  ├─ img                            // img
+   │  ├─ img                            //
    │  │  └─ base                        //
    │  │     ├─ empty.png                //
    │  │     └─ loading@2x.gif           //
-   │  └─ js                             // js
+   │  └─ js                             //
    ├─ config                            // 业务配置目录
    │  ├─ apis                           // 所有接口相关
    │  │  ├─ index.js                    //
    │  │  └─ list.js                     //
    │  ├─ router                         // 所有路由相关
    │  │  ├─ dev.js                      //
+   │  │  ├─ error.js                    //
    │  │  └─ index.js                    //
    │  └─ store                          // 状态商店（所有全局状态管理相关）
    │     └─ dev                         //
    │        └─ index.js                 //
    ├─ index.js                          // 入口js文件
-   ├─ layout                            // 布局组件
+   ├─ layout                            // 基础布局组件
    │  ├─ frame-view                     //
    │  │  ├─ index.js                    //
    │  │  └─ index.scss                  //
    │  ├─ README.md                      //
    │  └─ tabbar                         //
    │     └─ index.js                    //
-   ├─ packages                          // 项目配套的第三方包
-   │  ├─ console                        // vConsole配置
+   ├─ packages                          // 项目配套的第三方包配置
+   │  ├─ console                        // vConsole
    │  │  └─ index.js                    //
-   │  ├─ request                        // axios请求库封装
+   │  ├─ request                        // axios
    │  │  ├─ cancel                      //
    │  │  │  ├─ index.js                 //
    │  │  │  └─ utils                    //
@@ -242,34 +243,37 @@ react-h5-tmp                            //
    │  │  │  └─ index.js                 //
    │  │  ├─ index.js                    //
    │  │  ├─ loading                     //
+   │  │  │  ├─ components               //
+   │  │  │  │  ├─ loading.js            //
+   │  │  │  │  └─ loading.scss          //
    │  │  │  └─ index.js                 //
    │  │  ├─ README.md                   //
    │  │  └─ retry                       //
    │  │     └─ index.js                 //
-   │  ├─ router                         // router 核心封装(集中导出)
+   │  ├─ router                         // react-router-dom
    │  │  └─ index.js                    //
    │  └─ store                          // Redux 核心封装(集中导出)
    │     ├─ index.js                    //
    │     └─ modules.js                  //
    ├─ reportWebVitals.js                //
    ├─ resources                         // 全局基础资源如基础组件、全局插件等
-   │  ├─ components                     // 基础组件
+   │  ├─ components                     //
    │  │  └─ base-list                   //
    │  │     ├─ index.js                 //
    │  │     ├─ index.scss               //
    │  │     └─ README.md                //
-   │  └─ plugin                         // 全局插件
+   │  └─ plugin                         //
    ├─ utils                             // 工具库
-   │  ├─ helper                         // 帮助类
-   │  │  └─ env.js                      //
+   │  ├─ helper                         // 帮助类如一些类型校验函数、判断浏览器 终端等
+   │  │  ├─ env.js                      //
+   │  │  ├─ sleep.js                    //
+   │  │  └─ validate.js                 //
    │  └─ tools                          // 其他工具类
    │     ├─ eventBus                    //
    │     │  └─ index.js                 //
-   │     ├─ get-realpx                  //
-   │     │  └─ index.js                 //
-   │     ├─ sleep.js                    //
-   │     └─ validate.js                 //
-   └─ views                             // 视图
+   │     └─ get-realpx                  //
+   │        └─ index.js                 //
+   └─ views                             // 视图层
       ├─ app                            //
       │  └─ App.js                      //
       ├─ components                     //
@@ -285,16 +289,16 @@ react-h5-tmp                            //
       │  │  │  └─ index.js              //
       │  │  ├─ layOut                   //
       │  │  │  └─ index.js              //
-      │  │  ├─ list                     //
-      │  │  │  ├─ index.js              //
-      │  │  │  └─ index.scss            //
-      │  │  ├─ lodashjs                 //
-      │  │  │  └─ index.js              //
       │  │  ├─ redux                    //
       │  │  │  ├─ index.js              //
       │  │  │  └─ index.scss            //
-      │  │  └─ tabbar                   //
-      │  │     └─ index.js              //
+      │  │  ├─ tabbar                   //
+      │  │  │  └─ index.js              //
+      │  │  └─ tool                     //
+      │  │     ├─ components            //
+      │  │     │  └─ lodashjs.js        //
+      │  │     ├─ index.js              //
+      │  │     └─ index.scss            //
       │  ├─ index.js                    //
       │  └─ index.scss                  //
       ├─ err404                         //
