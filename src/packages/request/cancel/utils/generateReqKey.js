@@ -8,7 +8,7 @@
  */
 
 // 工具函数
-import { isJson, isJsonStr } from '@/utils/tools/validate';
+import { isJson, isJsonStr } from '@/utils/helper/validate';
 
 // QS 模块
 import QS from 'qs';

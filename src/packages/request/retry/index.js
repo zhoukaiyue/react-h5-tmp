@@ -4,13 +4,13 @@
  * @Author: zhoukai
  * @Date: 2022-11-21 10:54:10
  * @LastEditors: zhoukai
- * @LastEditTime: 2022-12-09 15:29:57
+ * @LastEditTime: 2023-06-26 09:44:39
  */
 
 // 工具函数之判断字符串是否是json字符串
-import { isJsonStr } from '@/utils/tools/validate';
+import { isJsonStr } from '@/utils/helper/validate';
 // 睡眠函数
-import { sleep } from '@/utils/tools/sleep';
+import { sleep } from '@/utils/helper/sleep';
 
 // http错误状态码处理
 import { httpErrorStatusHandle } from '../httpErrorStatusHandle';
