@@ -3,7 +3,7 @@ import Loading from './components/loading.js';
 // 计数
 let COUNT = 0;
 
-const laoding = {
+const loading = {
     show() {
         if (COUNT === 0) {
             Loading.open();
@@ -17,4 +17,4 @@ const laoding = {
     }
 };
 
-export default laoding;
+export default loading;
