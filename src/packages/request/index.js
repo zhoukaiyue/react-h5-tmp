@@ -173,3 +173,24 @@ export const $http = (url, params, config = {}) => {
             });
     });
 };
+
+/**
+ * get请求
+ * 使用场景：适用于你的请求类型是get
+ * @param {string} url 接口地址
+ * @param {object} params 入参
+ * @param {AxiosRequestConfig} config 其他配置项，默认为{}
+ * @returns {Promise}
+ */
+export const $get = (url, params = {}, config = {}) => {
+    return new Promise((resolve, reject) => {
+        axios
+            .get(url, { params, ...config })
+            .then((res) => {
+                resolve(res.data);
+            })
+            .catch((err) => {
+                reject(err);
+            });
+    });
+};
