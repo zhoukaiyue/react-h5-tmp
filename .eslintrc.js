@@ -21,6 +21,11 @@ module.exports = {
         // ecmaVersion: 'latest'
     },
     plugins: ['react', 'prettier'],
+    settings: {
+        react: {
+            version: 'detect'
+        }
+    },
     rules: {
         'no-console': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
         'no-debugger': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
