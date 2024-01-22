@@ -1,10 +1,11 @@
+// @ts-nocheck
 /*
  * @Descripttion:
  * @version:
  * @Author: zhoukai
  * @Date: 2022-08-01 21:34:48
  * @LastEditors: zhoukai
- * @LastEditTime: 2022-08-12 17:34:18
+ * @LastEditTime: 2024-01-22 14:48:15
  */
 module.exports = {
     root: true,
@@ -30,7 +31,6 @@ module.exports = {
         'no-console': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
         'no-debugger': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
         'react/react-in-jsx-scope': 'off',
-        'no-unused-vars': ['warn', { vars: 'all', args: 'after-used', ignoreRestSiblings: false }],
         'prettier/prettier': ['error', { singleQuote: true, endOfLine: 'auto' }]
     }
 };
