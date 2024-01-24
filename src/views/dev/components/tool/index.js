@@ -1,4 +1,12 @@
-import './index.scss';
+/*
+ * @Descripttion:
+ * @version:
+ * @Author: zhoukai
+ * @Date: 2023-06-09 11:56:28
+ * @LastEditors: zhoukai
+ * @LastEditTime: 2024-01-24 15:09:33
+ */
+import styles from './index.module.scss';
 import FrameView from '@/layout/frame-view';
 import { NoticeBar } from 'antd-mobile';
 import { RightOutline } from 'antd-mobile-icons';
@@ -14,7 +22,7 @@ function DevTool() {
 
     return (
         <FrameView
-            className='dev-tool'
+            className={styles.dev_tool}
             cont={
                 <div style={{ color: '#333' }}>
                     <NoticeBar content='脚手架已经集成的工具库' color='alert' />

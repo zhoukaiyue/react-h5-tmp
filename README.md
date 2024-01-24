@@ -4,12 +4,12 @@
  * @Author: zhoukai
  * @Date: 2022-07-28 09:54:02
  * @LastEditors: zhoukai
- * @LastEditTime: 2023-06-26 09:51:08
+ * @LastEditTime: 2024-01-24 15:13:03
 -->
 
 # 简介
 
-react-h5-tmp 是基于 create-react-app(v5) 创建并使用 Ant Design Mobile + JavaScript + craco + Redux + sass + Rem 布局适配 + axios（封装）+ Eslint + Prettier 等流行技术栈构建移动端模板脚手架，开箱即用。
+react-h5-tmp 是基于 create-react-app(v5) 创建并使用 Ant Design Mobile + JavaScript + craco + Redux + sass + CSS Moudles + Rem 布局适配 + axios（封装）+ Eslint + Prettier 等流行技术栈构建移动端模板脚手架，开箱即用。
 
 craco 是什么？
 craco（一个对 create-react-app 进行自定义配置的社区解决方案） 对 create-react-app 的默认配置进行自定义设置。
@@ -66,7 +66,7 @@ pnpm lint:prettier
 -   🚀 不是常用的方法不要全局挂载；
 -   🚀 文件命名如果是多单词则采用驼峰命名或者烤肉串大小写，尽量简洁明了；
 
-### 基础组件名。 【注：src/components 目录。】
+### 基础组件名。 【注：src/resources/components 目录。】
 
 > 基础组件文件命名应该以 base 为前缀命名，以示其唯一性，并且以横线连接。
 
@@ -107,7 +107,7 @@ src
    └─ router
       |- index.js
       |- dev.js
-      |- home.js
+      └─ home.js
 ```
 
 ### 接口文件创建与命名。 【注：src/config/apis 目录。】
@@ -120,7 +120,7 @@ src
 └─ config
    └─ apis
       |- index.js
-      |- home.js
+      └─ home.js
 ```
 
 ### 状态切片文件创建与命名。 【注：src/config/store 目录。】
@@ -133,9 +133,7 @@ src
 └─ config
    └─ store
       └─ dev
-         |- index.js
-      └─ home
-         |- index.js
+         └─ index.js
 ```
 
 ### 图片资源。 【注：src/assets/img 目录。】
@@ -147,9 +145,6 @@ src
 src
 └─ assets
    └─ img
-      |- index
-      |- dev
-      |- base
 ```
 
 ## git 版本规范
@@ -183,129 +178,38 @@ react-h5-tmp
 ├─ .env.development                     // 开发环境配置文件
 ├─ .env.production                      // 生产环境配置文件
 ├─ .env.test                            // 测试环境配置文件
-├─ .eslintignore                        //
-├─ .eslintrc.js                         // ESlint配置文件
-├─ .npmrc                               //
-├─ .prettierrc.js                       // prettier配置文件
-├─ .vscode                              //
-│  └─ settings.json                     //
-├─ babel.config.js                      //
-├─ craco.config.js                      // 构建脚本（webpack配置）
-├─ jsconfig.json                        //
-├─ package.json                         //
-├─ pnpm-lock.yaml                       //
-├─ postcss.config.js                    //
-├─ public                               //
-│  ├─ index.html                        // template模板
-│  └─ static                            // 静态资源
-│     └─ favicon.ico                    //
-├─ README.md                            // 项目使用说明文档
-├─ run.bat                              // 批处理文件脚本
-└─ src                                  // 业务模块
-   ├─ assets                            // 静态资源 hash处理
-   │  ├─ css                            //
-   │  │  ├─ index.scss                  //
-   │  │  └─ utils                       //
-   │  │     └─ @util.scss               //
-   │  ├─ img                            //
-   │  │  └─ base                        //
-   │  │     ├─ empty.png                //
-   │  │     └─ loading@2x.gif           //
-   │  └─ js                             //
-   ├─ config                            // 业务配置目录
-   │  ├─ apis                           // 所有接口相关
-   │  │  ├─ index.js                    //
-   │  │  └─ list.js                     //
-   │  ├─ router                         // 所有路由相关
-   │  │  ├─ dev.js                      //
-   │  │  ├─ error.js                    //
-   │  │  └─ index.js                    //
-   │  └─ store                          // 状态商店（所有全局状态管理相关）
-   │     └─ dev                         //
-   │        └─ index.js                 //
-   ├─ index.js                          // 入口js文件
-   ├─ layout                            // 基础布局组件
-   │  ├─ frame-view                     //
-   │  │  ├─ index.js                    //
-   │  │  └─ index.scss                  //
-   │  ├─ README.md                      //
-   │  └─ tabbar                         //
-   │     └─ index.js                    //
-   ├─ packages                          // 项目配套的第三方包配置
-   │  ├─ console                        // vConsole
-   │  │  └─ index.js                    //
-   │  ├─ request                        // axios
-   │  │  ├─ cancel                      //
-   │  │  │  ├─ index.js                 //
-   │  │  │  └─ utils                    //
-   │  │  │     └─ generateReqKey.js     //
-   │  │  ├─ httpErrorStatusHandle       //
-   │  │  │  └─ index.js                 //
-   │  │  ├─ index.js                    //
-   │  │  ├─ loading                     //
-   │  │  │  ├─ components               //
-   │  │  │  │  ├─ loading.js            //
-   │  │  │  │  └─ loading.scss          //
-   │  │  │  └─ index.js                 //
-   │  │  ├─ README.md                   //
-   │  │  └─ retry                       //
-   │  │     └─ index.js                 //
-   │  ├─ router                         // react-router-dom
-   │  │  └─ index.js                    //
-   │  └─ store                          // Redux 核心封装(集中导出)
-   │     ├─ index.js                    //
-   │     └─ modules.js                  //
-   ├─ reportWebVitals.js                //
-   ├─ resources                         // 全局基础资源如基础组件、全局插件等
-   │  ├─ components                     //
-   │  │  └─ base-list                   //
-   │  │     ├─ index.js                 //
-   │  │     ├─ index.scss               //
-   │  │     └─ README.md                //
-   │  └─ plugin                         //
-   ├─ utils                             // 工具库
-   │  ├─ helper                         // 帮助类如一些类型校验函数、判断浏览器 终端等
-   │  │  ├─ env.js                      //
-   │  │  ├─ sleep.js                    //
-   │  │  └─ validate.js                 //
-   │  └─ tools                          // 其他工具类
-   │     ├─ eventBus                    //
-   │     │  └─ index.js                 //
-   │     └─ get-realpx                  //
-   │        └─ index.js                 //
-   └─ views                             // 视图层
-      ├─ app                            //
-      │  └─ App.js                      //
-      ├─ components                     //
-      │  └─ the-loading                 //
-      │     ├─ index.js                 //
-      │     └─ index.scss               //
-      ├─ dev                            //
-      │  ├─ components                  //
-      │  │  ├─ eventBus                 //
-      │  │  │  ├─ components            //
-      │  │  │  │  ├─ children.js        //
-      │  │  │  │  └─ find.js            //
-      │  │  │  └─ index.js              //
-      │  │  ├─ layOut                   //
-      │  │  │  └─ index.js              //
-      │  │  ├─ redux                    //
-      │  │  │  ├─ index.js              //
-      │  │  │  └─ index.scss            //
-      │  │  ├─ tabbar                   //
-      │  │  │  └─ index.js              //
-      │  │  └─ tool                     //
-      │  │     ├─ components            //
-      │  │     │  └─ lodashjs.js        //
-      │  │     ├─ index.js              //
-      │  │     └─ index.scss            //
-      │  ├─ index.js                    //
-      │  └─ index.scss                  //
-      ├─ err404                         //
-      │  ├─ index.js                    //
-      │  └─ index.scss                  //
-      └─ index                          //
-         ├─ index.js                    //
-         └─ index.scss                  //
+├─ .eslintignore                        // ESLint 忽略配置文件
+├─ .eslintrc.js                         // ESLint 配置文件
+├─ .npmrc                               // NPM 配置文件
+├─ .prettierrc.js                       // Prettier 配置文件
+├─ .vscode                              // VSCode 配置目录
+├─ babel.config.js                      // Babel 配置文件
+├─ craco.config.js                      // Craco 配置文件
+├─ jsconfig.json                        // JSConfig 配置文件
+├─ package.json                         // 项目配置文件
+├─ pnpm-lock.yaml                       // Pnpm 锁定文件
+├─ postcss.config.js                    // PostCSS 配置文件
+├─ public                               // 公共资源目录
+├─ README.md                            // 项目说明文档
+├─ run.bat                              // Windows 平台运行脚本
+└─ src                                  // 项目源代码目录
+   ├─ assets                            // 资源文件目录
+   ├─ config                            // 配置文件目录
+   ├─ index.js                          // 项目入口文件
+   ├─ layout                            // 布局组件目录
+   ├─ packages                          // 自定义包目录
+   │  ├─ console                        // 控制台包
+   │  ├─ request                        // 请求包
+   │  ├─ router                         // 路由包
+   │  └─ store                          // 状态管理包
+   ├─ reportWebVitals.js                // Web 性能报告文件
+   ├─ resources                         // 资源目录
+   │  ├─ components                     // 通用组件目录
+   │  └─ plugin                         // 插件目录
+   ├─ utils                             // 工具目录
+   │  ├─ helper                         // 辅助函数目录
+   │  └─ tools                          // 工具函数目录
+   └─ views                             // 视图组件目录
+
 
 ```

@@ -4,9 +4,9 @@
  * @Author: zhoukai
  * @Date: 2022-07-29 14:31:25
  * @LastEditors: zhoukai
- * @LastEditTime: 2022-08-08 09:21:03
+ * @LastEditTime: 2024-01-24 14:59:36
  */
-import './index.scss';
+import styles from './index.module.scss';
 import FrameView from '@/layout/frame-view';
 import { Button } from 'antd-mobile';
 import { useNavigate } from 'react-router-dom';
@@ -14,7 +14,7 @@ function Index() {
     const navigate = useNavigate();
     return (
         <FrameView
-            className={'index'}
+            className={styles.index}
             cont={
                 <Button
                     shape='default'

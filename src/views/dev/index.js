@@ -4,9 +4,9 @@
  * @Author: zhoukai
  * @Date: 2022-07-29 14:31:25
  * @LastEditors: zhoukai
- * @LastEditTime: 2023-06-09 11:06:55
+ * @LastEditTime: 2024-01-24 15:02:41
  */
-import './index.scss';
+import styles from './index.module.scss';
 import FrameView from '@/layout/frame-view';
 import { RightOutline } from 'antd-mobile-icons';
 import { Tag } from 'antd-mobile';
@@ -61,7 +61,7 @@ function Dev() {
             </div>
         </div>
     );
-    return <FrameView className='dev' cont={CONT_TMP}></FrameView>;
+    return <FrameView className={styles.dev} cont={CONT_TMP}></FrameView>;
 }
 
 export default Dev;
