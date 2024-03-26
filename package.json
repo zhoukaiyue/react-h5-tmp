@@ -1,6 +1,6 @@
 {
     "name": "react-h5-tmp",
-    "version": "v1.3.2",
+    "version": "v1.3.3",
     "private": true,
     "dependencies": {
         "@craco/craco": "6.4.5",
