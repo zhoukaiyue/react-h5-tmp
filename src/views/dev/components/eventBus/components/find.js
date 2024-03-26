@@ -7,9 +7,8 @@
  * @LastEditTime: 2022-08-10 13:46:07
  */
 import React from 'react';
-import getRealPx from '@/utils/tools/get-realpx';
-// 引入event文件
-import eventBus from '@/utils/tools/eventBus';
+// 引入event文件,这里的eventBus是一个事件总线;  getRealPx是一个方法，用于获取真实的px
+import { eventBus, getRealPx } from '@/utils/tools';
 
 function DevEventBusFind() {
     const [_msg, setN] = React.useState(''); // 1.初始值

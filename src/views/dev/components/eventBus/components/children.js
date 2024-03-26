@@ -4,10 +4,10 @@
  * @Author: zhoukai
  * @Date: 2022-08-10 11:29:12
  * @LastEditors: zhoukai
- * @LastEditTime: 2022-08-10 11:51:11
+ * @LastEditTime: 2024-03-26 12:00:29
  */
 
-import getRealPx from '@/utils/tools/get-realpx';
+import { getRealPx } from '@/utils/tools';
 import Children from './find';
 function DevEventBusChildren() {
     return (

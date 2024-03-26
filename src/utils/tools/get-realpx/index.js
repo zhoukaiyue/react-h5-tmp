@@ -4,7 +4,7 @@
  * @Author: zhoukai
  * @Date: 2022-08-02 15:51:15
  * @LastEditors: zhoukai
- * @LastEditTime: 2022-12-09 17:02:40
+ * @LastEditTime: 2024-03-26 11:54:08
  */
 
 /**
@@ -13,7 +13,7 @@
  * @param px 传入设计稿标注大小(iphone6为标准)，如果是ad组件，请按照设计稿除以2，因为ad的根字体大小为37.5
  * @returns
  */
-export default function getRealPx(px) {
+export function getRealPx(px) {
     const screenWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
     return (screenWidth / 750) * px;
 }

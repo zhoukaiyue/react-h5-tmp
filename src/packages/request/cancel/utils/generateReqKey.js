@@ -4,11 +4,11 @@
  * @Author: zhoukai
  * @Date: 2022-11-21 14:21:38
  * @LastEditors: zhoukai
- * @LastEditTime: 2022-11-22 10:07:47
+ * @LastEditTime: 2024-03-26 12:01:21
  */
 
 // 工具函数
-import { isJson, isJsonStr } from '@/utils/helper/validate';
+import { isJson, isJsonStr } from '@/utils/helper';
 
 // QS 模块
 import QS from 'qs';

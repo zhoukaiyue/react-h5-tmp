@@ -7,10 +7,9 @@
  * @LastEditTime: 2022-08-10 13:45:53
  */
 import FrameView from '@/layout/frame-view';
-import getRealPx from '@/utils/tools/get-realpx';
 import Children from './components/children';
-// 引入event文件
-import eventBus from '@/utils/tools/eventBus';
+// 引入event文件,这里的eventBus是一个事件总线;  getRealPx是一个方法，用于获取真实的px
+import { eventBus, getRealPx } from '@/utils/tools';
 
 function DevEventBus() {
     return (
