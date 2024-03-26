@@ -1,7 +1,7 @@
 {
     "editor.defaultFormatter": "esbenp.prettier-vscode",
     "eslint.enable": true,
-    "editor.formatOnSave": false,
+    "editor.formatOnSave": true,
     "eslint.run": "onType",
     "eslint.validate": ["javascript", "vue", "javascriptreact", "typescript", "typescriptreact"],
     "ProjectTree.withComment": true,
@@ -9,5 +9,8 @@
     "editor.codeActionsOnSave": {
         "source.fixAll.eslint": true
     },
-    "js/ts.implicitProjectConfig.checkJs": true
+    "js/ts.implicitProjectConfig.checkJs": true,
+    "[html]": {
+        "editor.defaultFormatter": "vscode.html-language-features"
+    }
 }
